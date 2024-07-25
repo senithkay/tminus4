@@ -54,11 +54,13 @@ export default function Home() {
 
         window.addEventListener('wheel', handleCanvasScroll);
         window.addEventListener('touchstart', function(event) {
+            alert('start')
             setStartY(event.touches[0].clientY);
             setIsTouching(true)
         });
 
         window.addEventListener('touchmove', function(event) {
+            alert('move')
             if (!isTouching) return;
 
             let moveY = event.touches[0].clientY;
@@ -77,10 +79,12 @@ export default function Home() {
         });
 
        window.addEventListener('touchend', function() {
+           alert('end')
            setIsTouching(false)
         });
 
         window.addEventListener('touchcancel', function() {
+            alert('cancel')
             setIsTouching(false)
         });
 
@@ -166,11 +170,11 @@ interface Mouse {
 }
 
 class Ball {
-    private radius: number;
+    private readonly radius: number;
     private x: number;
     private y: number;
-    private startColor: string;
-    private endColor: string;
+    private readonly startColor: string;
+    private readonly endColor: string;
     private context: CanvasRenderingContext2D;
     private canvas:HTMLCanvasElement;
     private dx:number;
@@ -190,11 +194,11 @@ class Ball {
         this.mouse = mouse;
     }
 
-    private getDistanceToMouse() {
-        const dx = this.mouse.x-this.x;
-        const dy = this.mouse.y-this.y;
-        return Math.sqrt(dx*dx + dy*dy);
-    }
+    // private getDistanceToMouse() {
+    //     const dx = this.mouse.x-this.x;
+    //     const dy = this.mouse.y-this.y;
+    //     return Math.sqrt(dx*dx + dy*dy);
+    // }
 
      private draw() {
         // if (this.getDistanceToMouse()>this.radius){
@@ -229,10 +233,10 @@ class Ball {
 }
 
 class ScrollBar {
-    private length:number;
+    private readonly length:number;
     private scrollCanvas:HTMLCanvasElement;
     private context:CanvasRenderingContext2D;
-    private x:number;
+    private readonly x:number;
     private y:number;
     constructor(length:number, scrollCanvas:HTMLCanvasElement, context:CanvasRenderingContext2D){
         this.length = length;
