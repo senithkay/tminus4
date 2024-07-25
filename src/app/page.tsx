@@ -89,7 +89,7 @@ export default function Home() {
         }
 
 
-    }, [pageOffset, scrollCanvasSize.width]);
+    }, [isTouching, pageOffset, scrollCanvasSize.width, startY]);
     useEffect(() => {
 
         const canvas = canvasRef.current;
