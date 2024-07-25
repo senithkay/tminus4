@@ -9,8 +9,6 @@ export default function Home() {
     const [mouse, setMouse] = useState<Mouse>({x:0,y:0});
     const [reduceOpacity, setReduceOpacity] = useState(false);
     const [pageOffset, setPageOffset] = useState(0);
-    const [startY, setStartY] = useState(0);
-    const [isTouching, setIsTouching] = useState(false);
 
     const handleResize = () => {
         setCanvasSize({ width: window.innerWidth, height: window.innerHeight });
@@ -24,7 +22,6 @@ export default function Home() {
 
     useEffect(() => {
         const handleCanvasScroll = (event:WheelEvent) => {
-            alert('a')
             if (event.deltaY>0) {
                 setPageOffset(pageOffset + 100)
             }
@@ -53,48 +50,13 @@ export default function Home() {
         scrollBar.animate();
 
         window.addEventListener('wheel', handleCanvasScroll);
-        scrollCanvas.addEventListener('touchstart', function(event) {
-            event.preventDefault();
-            alert('start')
-            setStartY(event.touches[0].clientY);
-            setIsTouching(true)
-        });
-
-        window.addEventListener('touchmove', function(event) {
-            alert('move')
-            if (!isTouching) return;
-
-            let moveY = event.touches[0].clientY;
-            let diffY = startY - moveY;
-
-            if (Math.abs(diffY) > 10) {
-                if (diffY > 0) {
-                    alert('Swiped up');
-                    // Perform action similar to wheel up
-                } else {
-                    alert('Swiped down');
-                    // Perform action similar to wheel down
-                }
-                setStartY(moveY);
-            }
-        });
-
-       window.addEventListener('touchend', function() {
-           alert('end')
-           setIsTouching(false)
-        });
-
-        window.addEventListener('touchcancel', function() {
-            alert('cancel')
-            setIsTouching(false)
-        });
 
         return () => {
             window.removeEventListener('wheel', handleCanvasScroll);
         }
 
 
-    }, [isTouching, pageOffset, scrollCanvasSize.width, startY]);
+    }, [pageOffset, scrollCanvasSize.width]);
     useEffect(() => {
 
         const canvas = canvasRef.current;
@@ -144,7 +106,7 @@ export default function Home() {
     }, []);
   return (
    <main>
-       <div className={'w-full h-screen relative overflow-hidden'}>
+       <div className={'w-full h-screen relative'}>
            <div
                className={`bg-black bg-transparent absolute w-full flex justify-center items-center h-[200vh] -translate-y-[${pageOffset}vh] transition-transform duration-1000`}>
                <div className={'h-[100vh] absolute top-0 w-full flex justify-center items-center'}>
