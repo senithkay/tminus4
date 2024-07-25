@@ -1,113 +1,234 @@
-import Image from "next/image";
+'use client';
+import {useEffect, useRef, useState} from "react";
 
 export default function Home() {
+    const canvasRef = useRef<HTMLCanvasElement>(null);
+    const scrollCanvasRef = useRef<HTMLCanvasElement>(null);
+    const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
+    const [scrollCanvasSize, setScrollCanvasSize] = useState({ width: 0, height: 0 });
+    const [mouse, setMouse] = useState<Mouse>({x:0,y:0});
+    const [reduceOpacity, setReduceOpacity] = useState(false);
+    const [pageOffset, setPageOffset] = useState(0);
+
+    const handleResize = () => {
+        setCanvasSize({ width: window.innerWidth, height: window.innerHeight });
+        setScrollCanvasSize({ width: window.innerWidth, height: window.innerHeight });
+    };
+
+    const handleMouseMove = (event: MouseEvent)=>{
+        setMouse({x:event.x,y:event.y});
+    }
+
+
+    useEffect(() => {
+        const handleCanvasScroll = (event:WheelEvent) => {
+            if (event.deltaY>0) {
+                setPageOffset(pageOffset + 100)
+            }
+            else{
+                setPageOffset(pageOffset - 100)
+            }
+        }
+
+        if (pageOffset<0){
+            setPageOffset(0)
+        }
+        if (pageOffset>100){
+            setPageOffset(100)
+        }
+
+        const scrollCanvas = scrollCanvasRef.current;
+        if (!scrollCanvas || !scrollCanvas.parentElement) return;
+        scrollCanvas.width = scrollCanvasSize.width;
+        scrollCanvas.height = scrollCanvas.parentElement.offsetHeight;
+        const context = scrollCanvas.getContext('2d');
+        if (!context) return;
+
+        //draw scrollbar
+        const height = 200+ pageOffset;
+        const scrollBar = new ScrollBar(height,scrollCanvas,context)
+        scrollBar.animate();
+
+        window.addEventListener('wheel', handleCanvasScroll);
+
+        return () => {
+            window.removeEventListener('wheel', handleCanvasScroll);
+        }
+
+
+    }, [pageOffset, scrollCanvasSize.width]);
+    useEffect(() => {
+
+        const canvas = canvasRef.current;
+        if (!canvas || !canvas.parentElement) return;
+        canvas.width = canvasSize.width;
+        canvas.height = canvas.parentElement.offsetHeight;
+        const context = canvas.getContext('2d');
+        if (!context) return;
+
+        const ball1 = new Ball((canvas.width/3), 0, 0, 'rgba(235, 54, 120, 1)', 'rgba(235, 54, 120, 0)', context, canvas, mouse);
+        const ball2 = new Ball((canvas.width/3), canvas.width,canvas.height, 'rgba(79, 23, 135, 1)', 'rgba(79, 23, 135, 0)', context,canvas, mouse);
+        animate()
+
+
+        function animate() {
+            if (canvas && context){
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                ball1.animate();
+                ball2.animate();
+
+                requestAnimationFrame(animate);
+            }
+        }
+
+
+        window.addEventListener('resize', handleResize);
+        canvas.addEventListener('mousemove', handleMouseMove);
+        return ()=>{
+            window.removeEventListener('resize', handleResize);
+            canvas.removeEventListener('mousemove', handleMouseMove);
+        }
+    }, [canvasSize.height, canvasSize.width, mouse]);
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setReduceOpacity(!reduceOpacity);
+        }, 2000);
+
+        return ()=>{
+            clearInterval(intervalId)
+        }
+    }, [reduceOpacity]);
+
+    useEffect(() => {
+        setCanvasSize({ width: window.innerWidth, height: window.innerHeight });
+        setScrollCanvasSize({ width: window.innerWidth, height: window.innerHeight })
+    }, []);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+   <main>
+       <div className={'w-full h-screen relative overflow-hidden'}>
+           <div
+               className={`bg-black bg-transparent absolute w-full flex justify-center items-center h-[200vh] -translate-y-[${pageOffset}vh] transition-transform duration-1000`}>
+               <div className={'h-[100vh] absolute top-0 w-full flex justify-center items-center'}>
+                   <h1 className={`text-gray-400 text-6xl font-bold text-center ${reduceOpacity ? 'opacity-70' : 'opacity-100'} transition-opacity duration-[1000] ease-linear`}>We
+                       Provide<br/>Scalable<br/>Software Solutions</h1>
+               </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+               <div className={'h-[100vh] absolute top-[100vh] w-full flex justify-center items-center'}>
+                   <h1 className={`text-gray-400 text-6xl font-bold text-center ${reduceOpacity ? 'opacity-70' : 'opacity-100'} transition-opacity duration-[1000] ease-linear`}>We
+                       Provide<br/>Optimized<br/>Software Solutions</h1>
+               </div>
+           </div>
+           <canvas ref={canvasRef} className={'bg-black'}></canvas>
+           <canvas ref={scrollCanvasRef} className={'bg-transparent absolute z-[1002] top-0'}></canvas>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+       </div>
+   </main>
   );
+}
+
+interface Mouse {
+    x: number;
+    y: number
+}
+
+class Ball {
+    private radius: number;
+    private x: number;
+    private y: number;
+    private startColor: string;
+    private endColor: string;
+    private context: CanvasRenderingContext2D;
+    private canvas:HTMLCanvasElement;
+    private dx:number;
+    private dy:number;
+    private mouse:Mouse;
+
+    constructor(radius:number, x:number, y:number, startColor:string, endColor:string, context:CanvasRenderingContext2D, canvas:HTMLCanvasElement, mouse:Mouse){
+        this.radius = radius;
+        this.x = x;
+        this.y = y;
+        this.startColor = startColor;
+        this.endColor = endColor;
+        this.context = context;
+        this.canvas = canvas;
+        this.dx = Math.random()<0.5?-1:1;
+        this.dy = Math.random()<0.5?-1:1;
+        this.mouse = mouse;
+    }
+
+    private getDistanceToMouse() {
+        const dx = this.mouse.x-this.x;
+        const dy = this.mouse.y-this.y;
+        return Math.sqrt(dx*dx + dy*dy);
+    }
+
+     private draw() {
+        // if (this.getDistanceToMouse()>this.radius){
+        //     this.x = this.mouse.x;
+        // }
+         const gradient = this.context.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
+         gradient.addColorStop(0, this.startColor);
+         gradient.addColorStop(1, this.endColor);
+
+         this.context.fillStyle = gradient;
+
+        this.context.beginPath();
+        this.context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+        this.context.fill();
+    }
+
+    animate(){
+        this.draw();
+        this.updatePosition();
+        if (this.x<=0 || this.x>=this.canvas.width){
+            this.dx *= -1
+        }
+        if (this.y<=0 || this.y>=this.canvas.height){
+            this.dy *= -1
+        }
+
+    }
+    private updatePosition() {
+        this.x += this.dx;
+        this.y += this.dy;
+    }
+}
+
+class ScrollBar {
+    private length:number;
+    private scrollCanvas:HTMLCanvasElement;
+    private context:CanvasRenderingContext2D;
+    private x:number;
+    private y:number;
+    constructor(length:number, scrollCanvas:HTMLCanvasElement, context:CanvasRenderingContext2D){
+        this.length = length;
+        this.scrollCanvas = scrollCanvas;
+        this.context = context;
+        this.x = scrollCanvas.width-50;
+        this.y = 200;
+    }
+
+    private draw() {
+        this.context.beginPath();
+        const lineGradient = this.context.createLinearGradient(this.x, 100, this.x, this.y);
+        lineGradient.addColorStop(0, 'rgba(79, 23, 135, 1)');
+        lineGradient.addColorStop(1, 'rgba(235, 54, 120, 1)');
+        this.context.strokeStyle = lineGradient;
+        this.context.lineWidth = 3;
+        this.context.moveTo(this.x, 100);
+        this.context.lineTo(this.x , this.y);
+        this.context.stroke();
+    }
+
+    animate(){
+        this.context.clearRect(0,0, this.scrollCanvas.width, this.scrollCanvas.height);
+        if (this.y<this.length){
+            this.y+=10;
+        }
+        this.draw();
+        requestAnimationFrame(this.animate.bind(this));
+    }
+
+
 }

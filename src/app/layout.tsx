@@ -1,8 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Roboto } from 'next/font/google';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
-const inter = Inter({ subsets: ["latin"] });
+
+
+import "./globals.css";
+import React from "react";
+import Navbar from "@/app/components/navbar";
+
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={roboto.className + ' bg-black overflow-x-hidden'}>
+      <div className={'w-full relative'}>
+       <Navbar />
+        {children}
+      </div>
+      </body>
     </html>
   );
 }
