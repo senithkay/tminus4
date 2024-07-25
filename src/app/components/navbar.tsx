@@ -24,7 +24,7 @@ const Navbar = () => {
         }
     }, [logoTextIndex]);
     return (<nav className={'absolute z-[1003] flex justify-between w-full h-[50px] items-center text-gray-400 px-[20px] overflow-x-hidden'}>
-        <h1 className={finger.className + ' w-[200px] cursor-pointer' }><RocketLaunchIcon sx={{marginX:'10px'}}/><span className={'text-2xl '}>{logoText[logoTextIndex]}</span></h1>
+        <h1 className={finger.className + ' w-[200px] cursor-pointer' }><RocketLaunchIcon sx={{marginX:'10px'}}/><span className={`${logoTextIndex===5?'text-lg': 'text-xl'}`}>{logoText[logoTextIndex]}</span></h1>
         <ul className={'hidden  gap-2.5 md:flex'}>
             <li><Link href={'/'} className={'hover:text-[#EB3678FF]'}>Home</Link></li>
             <li><Link href={'/services'} className={'hover:text-[#EB3678FF]'}>Services</Link></li>

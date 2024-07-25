@@ -1,5 +1,7 @@
 'use client';
 import {useEffect, useRef, useState} from "react";
+import NoImageCard from "@/app/components/no-image-card";
+import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
 
 export default function Home() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -7,7 +9,6 @@ export default function Home() {
     const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
     const [scrollCanvasSize, setScrollCanvasSize] = useState({ width: 0, height: 0 });
     const [mouse, setMouse] = useState<Mouse>({x:0,y:0});
-    const [reduceOpacity, setReduceOpacity] = useState(false);
     const [pageOffset, setPageOffset] = useState(0);
 
     const handleResize = () => {
@@ -90,15 +91,7 @@ export default function Home() {
         }
     }, [canvasSize.height, canvasSize.width, mouse]);
 
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setReduceOpacity(!reduceOpacity);
-        }, 2000);
 
-        return ()=>{
-            clearInterval(intervalId)
-        }
-    }, [reduceOpacity]);
 
     useEffect(() => {
         setCanvasSize({ width: window.innerWidth, height: window.innerHeight });
@@ -108,15 +101,50 @@ export default function Home() {
    <main>
        <div className={'w-full h-screen relative'}>
            <div
-               className={`bg-black bg-transparent absolute w-full flex justify-center items-center h-[200vh] transition-transform duration-1000`}>
+               className={`bg-black bg-transparent absolute w-full flex justify-center items-center h-[200vh] transition-transform duration-1000 px-[50px]`}>
                <div className={'h-[100vh] absolute top-0 w-full flex justify-center items-center'}>
-                   <h1 className={`text-gray-400 text-6xl font-bold text-center ${reduceOpacity ? 'opacity-70' : 'opacity-100'} transition-opacity duration-[1000] ease-linear`}>We
+                   <h1 className={`text-gray-400 text-6xl font-bold text-center  transition-opacity duration-[1000] ease-linear`}>We
                        Provide<br/>Scalable<br/>Software Solutions</h1>
                </div>
 
-               <div className={'h-[100vh] absolute top-[100vh] w-full flex justify-center items-center'}>
-                   <h1 className={`text-gray-400 text-6xl font-bold text-center ${reduceOpacity ? 'opacity-70' : 'opacity-100'} transition-opacity duration-[1000] ease-linear`}>We
-                       Provide<br/>Optimized<br/>Software Solutions</h1>
+               <div className={'min-h-[100vh] absolute top-[100vh] w-full flex flex-col justify-center items-center gap-[50px] py-[100px] px-[50px]'}>
+                   <h1 className={`text-gray-400 text-6xl font-bold text-center  transition-opacity duration-[1000] ease-linear`}>
+                       Our Services
+                   </h1>
+                   <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                       <div
+                           className={'w-[350px] hover:scale-105 transition-all duration-500 h-[300px] rounded-[20px] card-shadow-primary-purple text-white p-[20px] flex flex-col gap-[20px] justify-center'}>
+                           <SettingsSuggestIcon className={'text-6xl'}/>
+                           <h3 className={'text-2xl'}> Custom Solutions</h3>
+                           <p className={'text-gray-400'}>Our team of experienced developers can create custom software
+                               solutions tailored
+                               to your specific requirements.</p>
+                       </div>
+                       <div
+                           className={'w-[350px] hover:scale-105 transition-all duration-500 h-[300px] rounded-[20px] card-shadow-primary-pink text-white p-[20px] flex flex-col gap-[20px] justify-center'}>
+                           <SettingsSuggestIcon className={'text-6xl'}/>
+                           <h3 className={'text-2xl'}> Custom Solutions</h3>
+                           <p className={'text-gray-400'}>Our team of experienced developers can create custom software
+                               solutions tailored
+                               to your specific requirements.</p>
+                       </div>
+                       <div
+                           className={'w-[350px] hover:scale-105 transition-all duration-500 h-[300px] rounded-[20px] card-shadow-primary-purple text-white p-[20px] flex flex-col gap-[20px] justify-center'}>
+                           <SettingsSuggestIcon className={'text-6xl'}/>
+                           <h3 className={'text-2xl'}> Custom Solutions</h3>
+                           <p className={'text-gray-400'}>Our team of experienced developers can create custom software
+                               solutions tailored
+                               to your specific requirements.</p>
+                       </div>
+                       <div
+                           className={'w-[350px] hover:scale-105 transition-all duration-500 h-[300px] rounded-[20px] card-shadow-primary-pink text-white p-[20px] flex flex-col gap-[20px] justify-center'}>
+                           <SettingsSuggestIcon className={'text-6xl'}/>
+                           <h3 className={'text-2xl'}> Custom Solutions</h3>
+                           <p className={'text-gray-400'}>Our team of experienced developers can create custom software
+                               solutions tailored
+                               to your specific requirements.</p>
+                       </div>
+                   </div>
                </div>
            </div>
            <canvas ref={canvasRef} className={'bg-black'}></canvas>
