@@ -54,6 +54,7 @@ export default function Home() {
 
         window.addEventListener('wheel', handleCanvasScroll);
         window.addEventListener('touchstart', function(event) {
+            event.preventDefault();
             alert('start')
             setStartY(event.touches[0].clientY);
             setIsTouching(true)
