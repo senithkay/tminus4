@@ -108,7 +108,7 @@ export default function Home() {
    <main>
        <div className={'w-full h-screen relative'}>
            <div
-               className={`bg-black bg-transparent absolute w-full flex justify-center items-center h-[200vh] -translate-y-[${pageOffset}vh] transition-transform duration-1000`}>
+               className={`bg-black bg-transparent absolute w-full flex justify-center items-center h-[200vh] transition-transform duration-1000`}>
                <div className={'h-[100vh] absolute top-0 w-full flex justify-center items-center'}>
                    <h1 className={`text-gray-400 text-6xl font-bold text-center ${reduceOpacity ? 'opacity-70' : 'opacity-100'} transition-opacity duration-[1000] ease-linear`}>We
                        Provide<br/>Scalable<br/>Software Solutions</h1>
