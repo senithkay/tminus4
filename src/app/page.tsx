@@ -53,7 +53,7 @@ export default function Home() {
         scrollBar.animate();
 
         window.addEventListener('wheel', handleCanvasScroll);
-        window.addEventListener('touchstart', function(event) {
+        scrollCanvas.addEventListener('touchstart', function(event) {
             event.preventDefault();
             alert('start')
             setStartY(event.touches[0].clientY);
