@@ -9,6 +9,8 @@ export default function Home() {
     const [mouse, setMouse] = useState<Mouse>({x:0,y:0});
     const [reduceOpacity, setReduceOpacity] = useState(false);
     const [pageOffset, setPageOffset] = useState(0);
+    const [startY, setStartY] = useState(0);
+    const [isTouching, setIsTouching] = useState(false);
 
     const handleResize = () => {
         setCanvasSize({ width: window.innerWidth, height: window.innerHeight });
@@ -22,6 +24,7 @@ export default function Home() {
 
     useEffect(() => {
         const handleCanvasScroll = (event:WheelEvent) => {
+            alert('a')
             if (event.deltaY>0) {
                 setPageOffset(pageOffset + 100)
             }
@@ -50,6 +53,36 @@ export default function Home() {
         scrollBar.animate();
 
         window.addEventListener('wheel', handleCanvasScroll);
+        window.addEventListener('touchstart', function(event) {
+            setStartY(event.touches[0].clientY);
+            setIsTouching(true)
+        });
+
+        window.addEventListener('touchmove', function(event) {
+            if (!isTouching) return;
+
+            let moveY = event.touches[0].clientY;
+            let diffY = startY - moveY;
+
+            if (Math.abs(diffY) > 10) {
+                if (diffY > 0) {
+                    alert('Swiped up');
+                    // Perform action similar to wheel up
+                } else {
+                    alert('Swiped down');
+                    // Perform action similar to wheel down
+                }
+                setStartY(moveY);
+            }
+        });
+
+       window.addEventListener('touchend', function() {
+           setIsTouching(false)
+        });
+
+        window.addEventListener('touchcancel', function() {
+            setIsTouching(false)
+        });
 
         return () => {
             window.removeEventListener('wheel', handleCanvasScroll);
