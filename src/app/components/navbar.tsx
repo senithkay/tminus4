@@ -23,7 +23,7 @@ const Navbar = () => {
             clearInterval(intervalId)
         }
     }, [logoTextIndex]);
-    return (<nav className={'absolute z-[1003] flex justify-between w-full h-[50px] items-center text-gray-400 px-[20px]'}>
+    return (<nav className={'absolute z-[1003] flex justify-between w-full h-[50px] items-center text-gray-400 px-[20px] overflow-x-hidden'}>
         <h1 className={finger.className + ' w-[200px] cursor-pointer' }><RocketLaunchIcon sx={{marginX:'10px'}}/><span className={'text-2xl '}>{logoText[logoTextIndex]}</span></h1>
         <ul className={'hidden  gap-2.5 md:flex'}>
             <li><Link href={'/'} className={'hover:text-[#EB3678FF]'}>Home</Link></li>
@@ -35,7 +35,7 @@ const Navbar = () => {
 
         </ul>
         <div className={'flex gap-1.5 justify-center items-center'}>
-            <Link href={'quote'} className={'border-gray-400 border-2 px-3 py-1 rounded-lg'}>Get a Quote</Link>
+            <Link href={'quote'} className={'border-gray-400 border-2 px-3 py-1 rounded-lg w-[120px] text-center'}>Get a Quote</Link>
             <MenuIcon className={'md:hidden'}/>
         </div>
     </nav>)
