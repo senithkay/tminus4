@@ -152,9 +152,9 @@ export default function Home() {
 
               </ul>
               <div className={'flex gap-1.5 justify-center items-center'}>
-                  <Link href={'quote'}
-                        className={'border-gray-400 border-2 px-3 py-1 rounded-lg w-[120px] text-center'}>Get a
-                      Quote</Link>
+                  <Button variant={'outlined'} sx={{color: '#9CA3AF'}} onClick={() => scrollToSection(contactRef)}
+                          className={'border-gray-400 border-2 px-3 py-2 rounded-lg w-[140px] text-center '}>Get
+                      a Quote</Button>
                   <MenuIcon className={'md:hidden'}/>
               </div>
           </nav>
@@ -175,12 +175,12 @@ export default function Home() {
 
                           <div className={'flex gap-2.5'}>
                               <Button variant={'contained'} sx={{backgroundColor: '#9CA3AF', color: 'black'}}
-                                      href={'quote'}
+                                      onClick={() => scrollToSection(aboutUsRef)}
                                       className={'border-gray-400 border-2 px-3 py-2 rounded-lg w-[140px] text-center '}>Get
                                   Started</Button>
-                              <Button variant={'outlined'} sx={{color: '#9CA3AF'}} href={'quote'}
+                              <Button variant={'outlined'} sx={{color: '#9CA3AF'}} onClick={() => scrollToSection(contactRef)}
                                       className={'border-gray-400 border-2 px-3 py-2 rounded-lg w-[140px] text-center '}>Get
-                                  Started</Button>
+                                  a Quote</Button>
                           </div>
                       </div>
 
