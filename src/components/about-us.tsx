@@ -33,7 +33,7 @@ export function AboutUs() {
         </section>
         <section className="w-full ">
           <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-            <div className="flex justify-center">
+            <div className="flex justify-center order-2 lg:order-1">
               <img
                   src="/images/core-values.svg"
                   width="500"
@@ -42,7 +42,7 @@ export function AboutUs() {
                   className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
               />
             </div>
-            <div className="space-y-4">
+            <div className="space-y-4 order-1 lg:order-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Core Values</h2>
               <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 At Acme Software Solutions, we are guided by a set of core values that shape our culture and drive our
@@ -93,7 +93,7 @@ export function AboutUs() {
             </div>
           </div>
         </section>
-        <section className="w-full  bg-muted">
+        <section className="w-full  bg-muted md:mt-1 mt-[30px]">
           <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Goals and
