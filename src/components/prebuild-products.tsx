@@ -1,7 +1,7 @@
 
-import Link from "next/link"
+
 import { JSX, SVGProps } from "react"
-import {ProductInfoCard} from "@/components/product-info-card";
+
 
 export function PrebuildProducts() {
   return (
