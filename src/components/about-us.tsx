@@ -45,7 +45,7 @@ export function AboutUs() {
             <div className="space-y-4 order-1 lg:order-2">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Core Values</h2>
               <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                At Acme Software Solutions, we are guided by a set of core values that shape our culture and drive our
+                At T - 4, we are guided by a set of core values that shape our culture and drive our
                 success. These values are the foundation upon which we build lasting relationships with our clients and
                 foster a collaborative, innovative, and customer-centric environment.
               </p>
@@ -99,7 +99,7 @@ export function AboutUs() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Goals and
                 Achievements</h2>
               <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                At Acme Software Solutions, we are driven by a relentless pursuit of excellence. Our goals are
+                At T minus 4, we are driven by a relentless pursuit of excellence. Our goals are
                 ambitious,
                 and we are proud to have achieved significant milestones that showcase our expertise and commitment to
                 our
@@ -109,31 +109,27 @@ export function AboutUs() {
                 <li className="flex items-start gap-4">
                   <CheckIcon className="mt-1 h-5 w-5 text-primary"/>
                   <div>
-                    <h3 className="text-lg font-semibold">Serving 500+ Clients Worldwide</h3>
+                    <h3 className="text-lg font-semibold"> 10+ Customers Worldwide</h3>
                     <p className="text-muted-foreground">
-                      We have successfully delivered innovative software solutions to a diverse range of clients across
-                      various industries, helping them achieve their business objectives.
+                      {`We are proud to have partnered with over 15 businesses, both locally and internationally. Our global client base is a testament to the quality and reliability of our services.`}
                     </p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <CheckIcon className="mt-1 h-5 w-5 text-primary"/>
                   <div>
-                    <h3 className="text-lg font-semibold">Achieving 98% Customer Satisfaction</h3>
+                    <h3 className="text-lg font-semibold">Strong Retention and Repeat Business</h3>
                     <p className="text-muted-foreground">
-                      Our unwavering commitment to customer service has earned us the trust and loyalty of our clients,
-                      with a consistently high satisfaction rate.
+                      {`Over 80% of our clients return for additional services, highlighting the trust and value we provide in long-term partnerships.`}
                     </p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
                   <CheckIcon className="mt-1 h-5 w-5 text-primary"/>
                   <div>
-                    <h3 className="text-lg font-semibold">Recognized as a Top Software Provider</h3>
+                    <h3 className="text-lg font-semibold">{`Launched Innovative Products`}</h3>
                     <p className="text-muted-foreground">
-                      Our industry-leading solutions and exceptional service have earned us numerous awards and
-                      accolades,
-                      solidifying our reputation as a trusted partner in the software industry.
+                      {`Introduced innovative software products with strong potential to become market leaders in their respective niches.`}
                     </p>
                   </div>
                 </li>

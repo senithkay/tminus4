@@ -25,7 +25,7 @@ export function WhyUs() {
                 <h3 className="text-lg font-bold">Industry-Leading Expertise</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Our team of seasoned professionals bring decades of experience in the software industry, ensuring your
+                Our team of seasoned professionals bring years of experience in the software industry, ensuring your
                 project is in the hands of true experts.
               </p>
             </div>
@@ -62,7 +62,7 @@ export function WhyUs() {
                 <h3 className="text-lg font-bold">Years of Experience</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                With over a decade of experience in the software industry, we have the knowledge and expertise to tackle
+                With years of experience in the software industry, we have the knowledge and expertise to tackle
                 even the most complex challenges.
               </p>
             </div>
@@ -71,11 +71,10 @@ export function WhyUs() {
                 <div className="bg-primary rounded-md p-3 flex items-center justify-center">
                   <TrophyIcon className="w-6 h-6 text-primary-foreground"/>
                 </div>
-                <h3 className="text-lg font-bold">Awards and Recognition</h3>
+                <h3 className="text-lg font-bold">Commitment to Quality and Security</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Our commitment to excellence has been recognized through numerous industry awards and accolades,
-                solidifying our reputation as a trusted partner.
+                {`Quality and security are at the core of everything we do. Our solutions are rigorously tested and compliant with industry standards, giving you peace of mind.`}
               </p>
             </div>
             <div className="grid gap-1 card-shadow-primary-purple p-[10px] rounded-[20px] hover:scale-[1.03] transition-all duration-500">

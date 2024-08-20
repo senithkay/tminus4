@@ -14,6 +14,9 @@ import Navbar from "@/app/components/navbar";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import MenuIcon from "@mui/icons-material/Menu";
 import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
+import ConstructionIcon from '@mui/icons-material/Construction';
+import SupportIcon from '@mui/icons-material/Support';
+import PsychologyIcon from '@mui/icons-material/Psychology';
 import {Finger_Paint} from "next/font/google";
 
 const finger = Finger_Paint({
@@ -142,7 +145,7 @@ export default function Home() {
               className={'absolute z-[1003] flex justify-between w-full h-[50px] items-center text-gray-400 px-[20px] overflow-x-hidden'}>
               <h1 className={finger.className + ' w-[200px] cursor-pointer'}><RocketLaunchIcon
                   sx={{marginX: '10px'}}/><span
-                  className={`${logoTextIndex === 5 ? 'text-lg' : 'text-xl'}`}>{logoText[logoTextIndex]}</span></h1>
+                  className={`text-lg`}>T - 4</span></h1>
               <ul className={'hidden  gap-2.5 md:flex'}>
                   <li><Link href={'/'}  className={'hover:text-[#EB3678FF]'}>Home</Link></li>
                   <li><button onClick={() => scrollToSection(aboutUsRef)}  className={'hover:text-[#EB3678FF]'}>About</button></li>
@@ -205,30 +208,21 @@ export default function Home() {
                                   </div>
                                   <div
                                       className={'w-[300px] hover:scale-[1.03] transition-all duration-500 h-[260px] rounded-[20px] card-shadow-primary-purple  p-[20px] flex flex-col gap-[20px] justify-center'}>
-                                      <SettingsSuggestIcon className={'text-6xl'}/>
-                                      <h3 className={'text-2xl'}> Custom Solutions</h3>
-                                      <p className={''}>Our team of experienced developers can create custom
-                                          software
-                                          solutions tailored
-                                          to your specific requirements.</p>
+                                      <ConstructionIcon className={'text-6xl'}/>
+                                      <h3 className={'text-2xl'}>{`Pre-built Software Solutions`}</h3>
+                                      <p className={''}>{`Offering pre-developed software that can be quickly customized and deployed.`}</p>
                                   </div>
                                   <div
                                       className={'w-[300px] hover:scale-[1.03] transition-all duration-500 h-[260px] rounded-[20px] card-shadow-primary-pink  p-[20px] flex flex-col gap-[20px] justify-center'}>
-                                      <SettingsSuggestIcon className={'text-6xl'}/>
-                                      <h3 className={'text-2xl'}> Custom Solutions</h3>
-                                      <p className={''}>Our team of experienced developers can create custom
-                                          software
-                                          solutions tailored
-                                          to your specific requirements.</p>
+                                      <SupportIcon className={'text-6xl'}/>
+                                      <h3 className={'text-2xl'}> {`Customer Support and Maintenance`}</h3>
+                                      <p className={''}>{`Ongoing support and maintenance for existing software solutions, ensuring they remain up-to-date and perform optimally.`}</p>
                                   </div>
                                   <div
                                       className={'w-[300px] hover:scale-[1.03] transition-all duration-500 h-[260px] rounded-[20px] card-shadow-primary-purple p-[20px] flex flex-col gap-[20px] justify-center'}>
-                                      <SettingsSuggestIcon className={'text-6xl'}/>
-                                      <h3 className={'text-2xl'}> Custom Solutions</h3>
-                                      <p className={''}>Our team of experienced developers can create custom
-                                          software
-                                          solutions tailored
-                                          to your specific requirements.</p>
+                                      <PsychologyIcon className={'text-6xl'}/>
+                                      <h3 className={'text-2xl'}> {`Consulting and Strategy`}</h3>
+                                      <p className={''}>{`Providing expert advice on software development, implementation strategies, and best practices to improve business processes.`}</p>
                                   </div>
                               </div>
                           </div>
@@ -257,14 +251,16 @@ export default function Home() {
                           <div className={'flex flex-col gap-[30px]'}>
                               <footer className="bg-muted py-12 md:py-16 w-full">
                                   <div
-                                      className="container max-w-7xl flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
-                                      <div className="flex items-center gap-4">
-                                          <Link href="#" prefetch={false}>
-                                              <MountainIcon className="h-8 w-8"/>
-                                          </Link>
-                                          <div>
-                                              <h3 className="font-medium">T - 4</h3>
-                                              <p className="text-muted-foreground">&copy; 2024 tminus4. All rights
+                                      className="container max-w-7xl flex flex-col  items-center justify-between gap-6 text-sm">
+                                      <div className="flex flex-col items-center gap-6">
+
+                                          <div className={'flex flex-col items-center justify-center gap-2.5'}>
+                                             <div className={'flex'}> <Link href="#" prefetch={false}>
+                                                 <RocketLaunchIcon
+                                                     sx={{marginX: '10px', fontSize: '60px'}}/>
+                                             </Link>
+                                                 <h3 className="text-6xl font-bold"><span className={finger.className}>T - 4</span></h3></div>
+                                              <p className="text-muted-foreground">&copy; 2024 Tminus4. All rights
                                                   reserved.</p>
                                           </div>
                                       </div>
@@ -272,22 +268,22 @@ export default function Home() {
                                           <ul className={'  gap-2.5 md:flex'}>
                                               <li>
                                                   <button onClick={() => scrollToSection(servicesRef)}
-                                                          className={'hover:text-[#EB3678FF]'}>Services
+                                                          className={'hover:text-[#EB3678FF] text-lg font-bold'}>Services
                                                   </button>
                                               </li>
                                               <li>
                                                   <button onClick={() => scrollToSection(productsRef)}
-                                                          className={'hover:text-[#EB3678FF]'}>Products
+                                                          className={'hover:text-[#EB3678FF] text-lg font-bold'}>Products
                                                   </button>
                                               </li>
                                               <li>
                                                   <button onClick={() => scrollToSection(teamRef)}
-                                                          className={'hover:text-[#EB3678FF]'}>Team
+                                                          className={'hover:text-[#EB3678FF] text-lg font-bold'}>Team
                                                   </button>
                                               </li>
                                               <li>
                                                   <button onClick={() => scrollToSection(contactRef)}
-                                                          className={'hover:text-[#EB3678FF]'}>Contact
+                                                          className={'hover:text-[#EB3678FF] text-lg font-bold'}>Contact
                                                   </button>
                                               </li>
                                           </ul>
@@ -296,7 +292,9 @@ export default function Home() {
                                           <a href="#"
                                              className="flex items-center gap-2 hover:underline underline-offset-4">
                                               <MailIcon className="w-5 h-5"/>
-                                              <span>info@tminus4.com</span>
+                                              <span>
+tivitytest101@gmail.com
+</span>
                                           </a>
                                           <a href="#"
                                              className="flex items-center gap-2 hover:underline underline-offset-4">

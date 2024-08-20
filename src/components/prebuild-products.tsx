@@ -12,7 +12,7 @@ export function PrebuildProducts() {
               Customizable Pre-Build Software Solutions
             </h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Secure Attendance Management System
+              {`We offer a range of pre-built software solutions that can be easily customized to meet your specific needs.`}
             </p>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
