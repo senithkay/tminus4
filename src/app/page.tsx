@@ -156,8 +156,10 @@ export default function Home() {
                   <Button variant={'outlined'} sx={{color: '#9CA3AF'}} onClick={() => scrollToSection(contactRef)}
                           className={'border-gray-400 border-2 px-3 py-2 rounded-lg w-[140px] text-center '}>Get
                       a Quote</Button>
-                  <MenuIcon className={'md:hidden'}/>
+                  {/*<MenuIcon className={'md:hidden'}/>*/}
               </div>
+
+
           </nav>
           <main>
               <div className={'w-full h-screen relative '}>
