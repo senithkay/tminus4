@@ -39,10 +39,10 @@ export function OurTeam() {
               />
             </div>
             <div className="grid gap-1 text-center">
-              <h3 className="text-lg font-semibold">Lahiru Sanjana, BSc (Hons) in Computer Science</h3>
-              <p className="text-muted-foreground">Strategic Lead & Marketing Expert</p>
+              <h3 className="text-lg font-semibold">Samitha Rathnayake, BSc in Computer Science</h3>
+              <p className="text-muted-foreground">Strategic and Backend Developer with Customer Relations</p>
               <p className="text-sm text-muted-foreground">
-                {` Lahiru drives our company's strategic initiatives and marketing efforts. He also plays a crucial role in maintaining strong relationships with our customers.`}
+                {` Samitha leads our strategic initiatives and backend implementation, while also playing a crucial role in maintaining strong customer relationships.`}
               </p>
             </div>
           </div>
@@ -56,10 +56,10 @@ export function OurTeam() {
               />
             </div>
             <div className="grid gap-1 text-center">
-              <h3 className="text-lg font-semibold">Sureshsri Dissanayake, BSc (Hons) in Computer Science</h3>
+              <h3 className="text-lg font-semibold">Sureshsri Dissanayake, BSc in Computer Science</h3>
               <p className="text-muted-foreground">User Interface Expert</p>
               <p className="text-sm text-muted-foreground">
-                Sureshsri is the creative force behind our user interfaces, ensuring that our products are not only functional but also visually appealing and user-friendly.
+              Sureshsri leads the design of our user interfaces, ensuring our products are both visually appealing and highly user-friendly
               </p>
             </div>
           </div>
@@ -73,10 +73,10 @@ export function OurTeam() {
               />
             </div>
             <div className="grid gap-1 text-center">
-              <h3 className="text-lg font-semibold">Samitha Rathnayake, BSc (Hons) in Computer Science</h3>
-              <p className="text-muted-foreground">Backend Applications and Quality Specialist</p>
+              <h3 className="text-lg font-semibold">Lahiru Sanjana, BSc in Computer Science</h3>
+              <p className="text-muted-foreground">Strategic and Backend Operations Lead</p>
               <p className="text-sm text-muted-foreground">
-                Samitha is responsible for the robustness and quality of our backend applications. His attention to detail ensures that our systems are reliable and efficient.
+              Lahiru ensures the robustness and quality of our backend systems, focusing on reliability and efficiency with meticulous attention to detail.
               </p>
             </div>
           </div>

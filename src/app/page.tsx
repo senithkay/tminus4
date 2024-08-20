@@ -195,38 +195,26 @@ export default function Home() {
                                   <div
                                       className={'w-[300px] hover:scale-[1.03] transition-all duration-500 h-[260px] rounded-[20px] card-shadow-primary-pink  p-[20px] flex flex-col gap-[20px] justify-center'}>
                                       <SettingsSuggestIcon className={'text-6xl'}/>
-                                      <h3 className={'text-2xl'}> Custom Solutions</h3>
-                                      <p className={''}>Our team of experienced developers can create custom
-                                          software
-                                          solutions tailored
-                                          to your specific requirements.</p>
+                                      <h3 className={'text-2xl'}> Custom Software Development</h3>
+                                      <p className={''}>Tailored software solutions designed to meet your unique business needs.</p>
                                   </div>
                                   <div
                                       className={'w-[300px] hover:scale-[1.03] transition-all duration-500 h-[260px] rounded-[20px] card-shadow-primary-purple  p-[20px] flex flex-col gap-[20px] justify-center'}>
                                       <SettingsSuggestIcon className={'text-6xl'}/>
-                                      <h3 className={'text-2xl'}> Custom Solutions</h3>
-                                      <p className={''}>Our team of experienced developers can create custom
-                                          software
-                                          solutions tailored
-                                          to your specific requirements.</p>
+                                      <h3 className={'text-2xl'}> Full-Stack Development</h3>
+                                      <p className={''}>Expert development for both front-end and back-end, ensuring a complete and seamless application.</p>
                                   </div>
                                   <div
                                       className={'w-[300px] hover:scale-[1.03] transition-all duration-500 h-[260px] rounded-[20px] card-shadow-primary-pink  p-[20px] flex flex-col gap-[20px] justify-center'}>
                                       <SettingsSuggestIcon className={'text-6xl'}/>
-                                      <h3 className={'text-2xl'}> Custom Solutions</h3>
-                                      <p className={''}>Our team of experienced developers can create custom
-                                          software
-                                          solutions tailored
-                                          to your specific requirements.</p>
+                                      <h3 className={'text-2xl'}> Technology Consulting</h3>
+                                      <p className={''}>Guidance on selecting and implementing the best technologies for your project.</p>
                                   </div>
                                   <div
                                       className={'w-[300px] hover:scale-[1.03] transition-all duration-500 h-[260px] rounded-[20px] card-shadow-primary-purple p-[20px] flex flex-col gap-[20px] justify-center'}>
                                       <SettingsSuggestIcon className={'text-6xl'}/>
-                                      <h3 className={'text-2xl'}> Custom Solutions</h3>
-                                      <p className={''}>Our team of experienced developers can create custom
-                                          software
-                                          solutions tailored
-                                          to your specific requirements.</p>
+                                      <h3 className={'text-2xl'}> Client Success Management</h3>
+                                      <p className={''}>Dedicated support to ensure your project meets its goals and adapts to your needs</p>
                                   </div>
                               </div>
                           </div>
