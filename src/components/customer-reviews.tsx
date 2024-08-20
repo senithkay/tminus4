@@ -58,11 +58,18 @@ We're extremely satisfied with the ERP system and would highly recommend t minus
                 <AvatarFallback>ES</AvatarFallback>
               </Avatar>
               <div className="grid gap-2">
-                <h3 className="text-lg font-semibold">Emily Saunders</h3>
+                <h3 className="text-lg font-semibold">Indeez Bathik</h3>
                 <p className="text-muted-foreground text-sm">
-                  {` "This is the best product I've ever used. I highly recommend it to everyone."`}
+                  {` "Working with T Minus 4 has been a transformative experience for Indeez Bathik. Their team delivered an exceptional e-commerce solution that perfectly aligns with our business needs, enabling us to manage our online store efficiently and enhance our customer experience.
+
+The e-commerce platform is user-friendly, feature-rich, and seamlessly integrates with our existing systems. We’ve seen a significant improvement in sales and customer satisfaction since its launch.
+
+Additionally, the business analytics and reporting tool provided by T Minus 4 has been invaluable. It offers in-depth insights into our sales data and customer behavior, allowing us to make informed decisions and drive our business strategy with confidence.
+
+The professionalism, expertise, and dedication of the T Minus 4 team were evident throughout the project. They were responsive, collaborative, and committed to delivering a solution that exceeded our expectations. We highly recommend T Minus 4 to any business looking for innovative software solutions."`}
 
                 </p>
+                <p>{`— Indeez Bathik`}</p>
               </div>
             </div>
 
