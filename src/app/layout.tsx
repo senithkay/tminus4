@@ -28,9 +28,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className + ' bg-black overflow-x-hidden'}>
-      <div className={'w-full relative'}>
-       <Navbar />
+      <body className={roboto.className + ' dark:bg-black overflow-x-hidden'}>
+      <div className={'w-full relative '}>
         {children}
       </div>
       </body>
