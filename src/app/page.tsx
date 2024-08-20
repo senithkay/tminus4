@@ -13,6 +13,7 @@ import {Button} from "@mui/material";
 import Navbar from "@/app/components/navbar";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import MenuIcon from "@mui/icons-material/Menu";
+import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
 import {Finger_Paint} from "next/font/google";
 
 const finger = Finger_Paint({
@@ -173,14 +174,10 @@ export default function Home() {
                               seamless integration, data-driven insights, and unparalleled performance.
                           </p>
 
-                          <div className={'flex gap-2.5'}>
-                              <Button variant={'contained'} sx={{backgroundColor: '#9CA3AF', color: 'black'}}
-                                      onClick={() => scrollToSection(aboutUsRef)}
-                                      className={'border-gray-400 border-2 px-3 py-2 rounded-lg w-[140px] text-center '}>Get
-                                  Started</Button>
-                              <Button variant={'outlined'} sx={{color: '#9CA3AF'}} onClick={() => scrollToSection(contactRef)}
-                                      className={'border-gray-400 border-2 px-3 py-2 rounded-lg w-[140px] text-center '}>Get
-                                  a Quote</Button>
+                          <div
+                              className={' gap-2.5 text-gray-500 flex flex-col justify-center items-center absolute top-[85vh]'}>
+                              <p className={'text-gray-500'}>Scroll down to get started</p>
+                              <ArrowCircleDownIcon fontSize={'large'}/>
                           </div>
                       </div>
 
@@ -188,7 +185,7 @@ export default function Home() {
                           className={'min-h-[100vh] absolute top-[100vh] w-full flex flex-col justify-center items-center py-[50px] gap-[100px]  bg-white'}>
 
                           <div ref={aboutUsRef} className={'flex flex-col gap-[30px]'}>
-                              <AboutUs/>
+                          <AboutUs/>
                           </div>
                           <div ref={servicesRef} className={'flex flex-col gap-[30px]'}>
                               <h1 className={` text-6xl font-bold text-center  transition-opacity duration-[1000] ease-linear`}>
