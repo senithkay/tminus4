@@ -42,7 +42,7 @@ export function OurTeam() {
               <h3 className="text-lg font-semibold">Samitha Rathnayake, BSc (Hons) in Computer Science</h3>
               <p className="text-muted-foreground">Strategic Lead & Marketing Expert</p>
               <p className="text-sm text-muted-foreground">
-                {` Lahiru drives our company's strategic initiatives and marketing efforts. He also plays a crucial role in maintaining strong relationships with our customers.`}
+                {` Samitha drives our company's strategic initiatives and marketing efforts. He also plays a crucial role in maintaining strong relationships with our customers.`}
               </p>
             </div>
           </div>
@@ -76,7 +76,7 @@ export function OurTeam() {
               <h3 className="text-lg font-semibold">Lahiru Sanjana, BSc (Hons) in Computer Science</h3>
               <p className="text-muted-foreground">Backend Applications and Quality Specialist</p>
               <p className="text-sm text-muted-foreground">
-                Samitha is responsible for the robustness and quality of our backend applications. His attention to detail ensures that our systems are reliable and efficient.
+                Lahiru is responsible for the robustness and quality of our backend applications. His attention to detail ensures that our systems are reliable and efficient.
               </p>
             </div>
           </div>
