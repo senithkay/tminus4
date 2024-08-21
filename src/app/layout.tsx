@@ -4,6 +4,7 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import { Analytics } from "@vercel/analytics/react"
 
 
 
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className + ' dark:bg-black overflow-x-hidden'}>
+      <Analytics />
       <div className={'w-full relative '}>
         {children}
       </div>
