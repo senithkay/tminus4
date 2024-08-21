@@ -198,7 +198,7 @@ export default function Home() {
                               </h1>
                               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                                   <div
-                                      className={'w-[300px] hover:scale-[1.03] transition-all duration-500 h-[260px] rounded-[20px] card-shadow-primary-pink  p-[20px] flex flex-col gap-[20px] justify-center'}>
+                                      className={'mx-auto w-[300px] hover:scale-[1.03] transition-all duration-500 h-[275px] rounded-[20px] card-shadow-primary-pink  p-[20px] flex flex-col gap-[20px] justify-center'}>
                                       <SettingsSuggestIcon className={'text-6xl'}/>
                                       <h3 className={'text-2xl'}> Custom Solutions</h3>
                                       <p className={''}>Our team of experienced developers can create custom
@@ -207,19 +207,19 @@ export default function Home() {
                                           to your specific requirements.</p>
                                   </div>
                                   <div
-                                      className={'w-[300px] hover:scale-[1.03] transition-all duration-500 h-[260px] rounded-[20px] card-shadow-primary-purple  p-[20px] flex flex-col gap-[20px] justify-center'}>
+                                      className={'mx-auto w-[300px] hover:scale-[1.03] transition-all duration-500 h-[275px] rounded-[20px] card-shadow-primary-purple  p-[20px] flex flex-col gap-[20px] justify-center'}>
                                       <ConstructionIcon className={'text-6xl'}/>
                                       <h3 className={'text-2xl'}>{`Pre-built Software Solutions`}</h3>
                                       <p className={''}>{`Offering pre-developed software that can be quickly customized and deployed.`}</p>
                                   </div>
                                   <div
-                                      className={'w-[300px] hover:scale-[1.03] transition-all duration-500 h-[260px] rounded-[20px] card-shadow-primary-pink  p-[20px] flex flex-col gap-[20px] justify-center'}>
+                                      className={'mx-auto w-[300px] hover:scale-[1.03] transition-all duration-500 h-[275px] rounded-[20px] card-shadow-primary-pink  p-[20px] flex flex-col gap-[20px] justify-center'}>
                                       <SupportIcon className={'text-6xl'}/>
                                       <h3 className={'text-2xl'}> {`Customer Support and Maintenance`}</h3>
                                       <p className={''}>{`Ongoing support and maintenance for existing software solutions, ensuring they remain up-to-date and perform optimally.`}</p>
                                   </div>
                                   <div
-                                      className={'w-[300px] hover:scale-[1.03] transition-all duration-500 h-[260px] rounded-[20px] card-shadow-primary-purple p-[20px] flex flex-col gap-[20px] justify-center'}>
+                                      className={'mx-auto w-[300px] hover:scale-[1.03] transition-all duration-500 h-[275px] rounded-[20px] card-shadow-primary-purple p-[20px] flex flex-col gap-[20px] justify-center'}>
                                       <PsychologyIcon className={'text-6xl'}/>
                                       <h3 className={'text-2xl'}> {`Consulting and Strategy`}</h3>
                                       <p className={''}>{`Providing expert advice on software development, implementation strategies, and best practices to improve business processes.`}</p>
