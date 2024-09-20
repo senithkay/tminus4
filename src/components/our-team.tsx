@@ -60,7 +60,7 @@ export function OurTeam() {
               <h3 className="text-lg font-semibold">Kavinda Medagoda</h3>
               <p className="text-muted-foreground">UI/UX</p>
               <p className="text-sm text-muted-foreground">
-                Sureshsri is the creative force behind our user interfaces, ensuring that our products are not only
+                Kavinda is the creative force behind our user interfaces, ensuring that our products are not only
                 functional but also visually appealing and user-friendly.
               </p>
             </div>
