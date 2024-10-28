@@ -19,6 +19,7 @@ import PsychologyIcon from "@mui/icons-material/Psychology";
 import { Finger_Paint } from "next/font/google";
 import JavascriptIcon from "@mui/icons-material/Javascript";
 import Image from "next/image";
+import OurTeam from "@/components/our-team";
 
 const finger = Finger_Paint({
   weight: "400",
