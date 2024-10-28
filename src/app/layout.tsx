@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto } from 'next/font/google';
+import { Roboto, Oxanium } from 'next/font/google';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -12,7 +12,7 @@ import "./globals.css";
 import React from "react";
 import Navbar from "@/app/components/navbar";
 
-const roboto = Roboto({
+const oxanium = Oxanium({
   weight: '400',
   subsets: ['latin'],
 })
@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className + ' dark:bg-black overflow-x-hidden'}>
+      <body className={oxanium.className + ' dark:bg-black overflow-x-hidden'}>
       <Analytics />
       <div className={'w-full relative '}>
         {children}

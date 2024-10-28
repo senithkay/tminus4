@@ -18,6 +18,8 @@ import ConstructionIcon from '@mui/icons-material/Construction';
 import SupportIcon from '@mui/icons-material/Support';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import {Finger_Paint} from "next/font/google";
+import JavascriptIcon from '@mui/icons-material/Javascript';
+import Image from "next/image";
 
 const finger = Finger_Paint({
     weight: '400',
@@ -187,11 +189,11 @@ export default function Home() {
                       </div>
 
                       <div
-                          className={'min-h-[100vh] absolute top-[100vh] w-full flex flex-col justify-center items-center py-[50px] gap-[100px]  bg-white'}>
-
-                          <div ref={aboutUsRef} className={'flex flex-col gap-[30px]'}>
-                          <AboutUs/>
+                          className={'min-h-[100vh] absolute top-[100vh] w-full flex flex-col justify-center items-center  bg-white'}>
+                          <div ref={aboutUsRef} className={'flex flex-col gap-[30px] w-full'}>
+                              <AboutUs/>
                           </div>
+
                           <div ref={servicesRef} className={'flex flex-col gap-[30px]'}>
                               <h1 className={` text-6xl font-bold text-center  transition-opacity duration-[1000] ease-linear`}>
                                   Our Services
@@ -244,7 +246,7 @@ export default function Home() {
                           </div>
 
                           <div ref={contactRef}
-                              className={'flex flex-col gap-[30px] bg-gradient-to-r from-black  via-[#4F1787FF] to-[#EB3678FF] w-full justify-center items-center md:px-[100px]'}>
+                               className={'flex flex-col gap-[30px] bg-gradient-to-r from-black  via-[#4F1787FF] to-[#EB3678FF] w-full justify-center items-center md:px-[100px]'}>
                               <ContactUs/>
                           </div>
 
@@ -255,11 +257,12 @@ export default function Home() {
                                       <div className="flex flex-col items-center gap-6">
 
                                           <div className={'flex flex-col items-center justify-center gap-2.5'}>
-                                             <div className={'flex'}> <Link href="#" prefetch={false}>
-                                                 <RocketLaunchIcon
-                                                     sx={{marginX: '10px', fontSize: '60px'}}/>
-                                             </Link>
-                                                 <h3 className="text-6xl font-bold"><span className={finger.className}>T - 4</span></h3></div>
+                                              <div className={'flex'}><Link href="#" prefetch={false}>
+                                                  <RocketLaunchIcon
+                                                      sx={{marginX: '10px', fontSize: '60px'}}/>
+                                              </Link>
+                                                  <h3 className="text-6xl font-bold"><span className={finger.className}>T - 4</span>
+                                                  </h3></div>
                                               <p className="text-muted-foreground">&copy; 2024 Tminus4. All rights
                                                   reserved.</p>
                                           </div>
