@@ -12,12 +12,22 @@ import { Button } from "@mui/material";
 import Navbar from "@/app/components/navbar";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import MenuIcon from "@mui/icons-material/Menu";
+<<<<<<< HEAD
 import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 import ConstructionIcon from "@mui/icons-material/Construction";
 import SupportIcon from "@mui/icons-material/Support";
 import PsychologyIcon from "@mui/icons-material/Psychology";
 import { Finger_Paint } from "next/font/google";
 import OurTeam from "@/components/our-team";
+=======
+import ArrowCircleDownIcon from '@mui/icons-material/ArrowCircleDown';
+import ConstructionIcon from '@mui/icons-material/Construction';
+import SupportIcon from '@mui/icons-material/Support';
+import PsychologyIcon from '@mui/icons-material/Psychology';
+import {Finger_Paint} from "next/font/google";
+import JavascriptIcon from '@mui/icons-material/Javascript';
+import Image from "next/image";
+>>>>>>> 5838f533be5b07cd19806e51cb47eb1a02928714
 
 const finger = Finger_Paint({
   weight: "400",
@@ -220,6 +230,7 @@ export default function Home() {
                 </h1>
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                   <div
+<<<<<<< HEAD
                     className={
                       "mx-auto w-[300px] hover:scale-[1.03] transition-all duration-500 h-[275px] rounded-[20px] card-shadow-primary-pink  p-[20px] flex flex-col gap-[20px] justify-center"
                     }
@@ -230,6 +241,149 @@ export default function Home() {
                       Our team of experienced developers can create custom
                       software solutions tailored to your specific requirements.
                     </p>
+=======
+                      className={`bg-black bg-transparent absolute w-full flex justify-center items-center h-[200vh] transition-transform duration-1000 `}>
+                      <div
+                          className={'h-[100vh] absolute top-0 w-full flex flex-col justify-center items-center gap-2.5'}>
+                          <h1 className={`text-gray-400 text-6xl font-bold text-center  transition-opacity duration-[1000] ease-linear`}>Unlock
+                              Your Digital Potential</h1>
+                          <p className="text-gray-400 max-w-[800px] text-center text-lg">
+                              Our software solutions empower businesses to innovate, scale, and thrive in the digital
+                              age.
+                              Experience
+                              seamless integration, data-driven insights, and unparalleled performance.
+                          </p>
+
+                      </div>
+
+                      <div
+                          className={'min-h-[100vh] absolute top-[100vh] w-full flex flex-col justify-center items-center  bg-white'}>
+                          <div ref={aboutUsRef} className={'flex flex-col gap-[30px] w-full'}>
+                              <AboutUs/>
+                          </div>
+
+                          <div ref={servicesRef} className={'flex flex-col gap-[30px]'}>
+                              <h1 className={` text-6xl font-bold text-center  transition-opacity duration-[1000] ease-linear`}>
+                                  Our Services
+                              </h1>
+                              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                                  <div
+                                      className={'mx-auto w-[300px] hover:scale-[1.03] transition-all duration-500 h-[275px] rounded-[20px] card-shadow-primary-pink  p-[20px] flex flex-col gap-[20px] justify-center'}>
+                                      <SettingsSuggestIcon className={'text-6xl'}/>
+                                      <h3 className={'text-2xl'}> Custom Solutions</h3>
+                                      <p className={''}>Our team of experienced developers can create custom
+                                          software
+                                          solutions tailored
+                                          to your specific requirements.</p>
+                                  </div>
+                                  <div
+                                      className={'mx-auto w-[300px] hover:scale-[1.03] transition-all duration-500 h-[275px] rounded-[20px] card-shadow-primary-purple  p-[20px] flex flex-col gap-[20px] justify-center'}>
+                                      <ConstructionIcon className={'text-6xl'}/>
+                                      <h3 className={'text-2xl'}>{`Pre-built Software Solutions`}</h3>
+                                      <p className={''}>{`Offering pre-developed software that can be quickly customized and deployed.`}</p>
+                                  </div>
+                                  <div
+                                      className={'mx-auto w-[300px] hover:scale-[1.03] transition-all duration-500 h-[275px] rounded-[20px] card-shadow-primary-pink  p-[20px] flex flex-col gap-[20px] justify-center'}>
+                                      <SupportIcon className={'text-6xl'}/>
+                                      <h3 className={'text-2xl'}> {`Customer Support and Maintenance`}</h3>
+                                      <p className={''}>{`Ongoing support and maintenance for existing software solutions, ensuring they remain up-to-date and perform optimally.`}</p>
+                                  </div>
+                                  <div
+                                      className={'mx-auto w-[300px] hover:scale-[1.03] transition-all duration-500 h-[275px] rounded-[20px] card-shadow-primary-purple p-[20px] flex flex-col gap-[20px] justify-center'}>
+                                      <PsychologyIcon className={'text-6xl'}/>
+                                      <h3 className={'text-2xl'}> {`Consulting and Strategy`}</h3>
+                                      <p className={''}>{`Providing expert advice on software development, implementation strategies, and best practices to improve business processes.`}</p>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div className={'flex flex-col gap-[30px]'}>
+                              <WhyUs/>
+                          </div>
+
+                          <div className={'flex flex-col gap-[30px] '}>
+                              <CustomerReviews/>
+                          </div>
+
+                          <div ref={productsRef} className={'flex flex-col gap-[30px]'}>
+                              <PrebuildProducts/>
+                          </div>
+
+                          <div ref={teamRef} className={'flex flex-col gap-[30px]'}>
+                              <OurTeam/>
+                          </div>
+
+                          <div ref={contactRef}
+                               className={'flex flex-col gap-[30px] bg-gradient-to-r from-black  via-[#4F1787FF] to-[#EB3678FF] w-full justify-center items-center md:px-[100px]'}>
+                              <ContactUs/>
+                          </div>
+
+                          <div className={'flex flex-col gap-[30px]'}>
+                              <footer className="bg-muted py-12 md:py-16 w-full">
+                                  <div
+                                      className="container max-w-7xl flex flex-col  items-center justify-between gap-6 text-sm">
+                                      <div className="flex flex-col items-center gap-6">
+
+                                          <div className={'flex flex-col items-center justify-center gap-2.5'}>
+                                              <div className={'flex'}><Link href="#" prefetch={false}>
+                                                  <RocketLaunchIcon
+                                                      sx={{marginX: '10px', fontSize: '60px'}}/>
+                                              </Link>
+                                                  <h3 className="text-6xl font-bold"><span className={finger.className}>T - 4</span>
+                                                  </h3></div>
+                                              <p className="text-muted-foreground">&copy; 2024 Tminus4. All rights
+                                                  reserved.</p>
+                                          </div>
+                                      </div>
+                                      <nav className="flex items-center gap-4 md:gap-6">
+                                          <ul className={'  gap-2.5 md:flex'}>
+                                              <li>
+                                                  <button onClick={() => scrollToSection(servicesRef)}
+                                                          className={'hover:text-[#EB3678FF] text-lg font-bold'}>Services
+                                                  </button>
+                                              </li>
+                                              <li>
+                                                  <button onClick={() => scrollToSection(productsRef)}
+                                                          className={'hover:text-[#EB3678FF] text-lg font-bold'}>Products
+                                                  </button>
+                                              </li>
+                                              <li>
+                                                  <button onClick={() => scrollToSection(teamRef)}
+                                                          className={'hover:text-[#EB3678FF] text-lg font-bold'}>Team
+                                                  </button>
+                                              </li>
+                                              <li>
+                                                  <button onClick={() => scrollToSection(contactRef)}
+                                                          className={'hover:text-[#EB3678FF] text-lg font-bold'}>Contact
+                                                  </button>
+                                              </li>
+                                          </ul>
+                                      </nav>
+                                      <div className="flex items-center gap-4 md:gap-6">
+                                          <a href="#"
+                                             className="flex items-center gap-2 hover:underline underline-offset-4">
+                                              <MailIcon className="w-5 h-5"/>
+                                              <span>
+tivitytest101@gmail.com
+</span>
+                                          </a>
+                                          <a href="#"
+                                             className="flex items-center gap-2 hover:underline underline-offset-4">
+                                              <PhoneIcon className="w-5 h-5"/>
+                                              <span>+94 (76) 8510403</span>
+                                          </a>
+                                      </div>
+                                  </div>
+                              </footer>
+                          </div>
+                      </div>
+
+
+                      <div
+                          className={'min-h-[100vh] absolute top-[200vh] w-full flex flex-col justify-center items-center gap-[50px] py-[100px] px-[50px]'}>
+
+                      </div>
+>>>>>>> 5838f533be5b07cd19806e51cb47eb1a02928714
                   </div>
                   <div
                     className={

@@ -1,34 +1,45 @@
-import { JSX, SVGProps } from "react"
+import React, { JSX, SVGProps } from "react"
+import Image from "next/image";
+import TechStackScroll from "@/components/techStack";
+import AutoplayVideo from "@/components/video-component";
+import {Compare} from "@/components/ui/compare";
 
 export function AboutUs() {
   return (
       <div>
-        <section className="w-full bg-primary">
-          <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-            <div className="space-y-4">
-              <h1 className="text-4xl font-bold tracking-tighter text-primary-foreground sm:text-5xl md:text-6xl">
-                About T - Minus 4
-              </h1>
-              <p className="max-w-[600px] text-primary-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                {` Our vision is to empower businesses with cutting-edge software solutions that drive innovation and
-              success. We are committed to delivering exceptional products and services that exceed our customers'
-              expectations.`}
-              </p>
-              <p className="max-w-[600px] text-primary-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Our mission is to be the trusted partner of choice for organizations seeking to transform their
-                operations
-                and unlock new opportunities through the power of technology.
-              </p>
-            </div>
-            <div className="flex justify-center">
-              <img
-                  src="/images/engineering_team.svg"
-                  width="500"
-                  height="500"
-                  alt="About Us"
-                  className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full"
+        <section className={'w-full '}>
+          <div
+              className={'w-full px-[300px] h-screen bg-black text-white text-4xl text-bold flex flex-col justify-center items-center gap-[100px]'}>
+
+            <div className={'flex gap-3 items-center'}>
+              <div>
+                <h2 className={'text-8xl text-gray-400'}>Design To Code</h2>
+                <p className={'max-w-[600px] text-gray-400 text-2xl text-justify'}>
+                  {` Transforming design into clean, efficient code is at the heart of what we do. Our approach bridges
+                  creativity and functionality, ensuring that every design element is seamlessly brought to life with
+                  pixel-perfect accuracy. From user interface concepts to fully responsive web solutions, we turn your
+                  vision into a digital reality with the latest development technologies`}
+                </p>
+              </div>
+              <Compare
+                  firstImage="/images/evento.png"
+                  secondImage="https://assets.aceternity.com/code-problem.png"
+                  firstImageClassName="object-cover object-left-top"
+                  secondImageClassname="object-cover object-left-top"
+                  className="h-[250px] w-[200px] md:h-[500px] md:w-[500px]"
+                  slideMode="hover"
               />
             </div>
+          </div>
+        </section>
+        <section className={'w-full h-screen'}>
+          <AutoplayVideo/>
+        </section>
+        <section className={'w-full '}>
+          <div
+              className={'w-full px-[300px] h-screen bg-black text-white text-4xl text-bold flex flex-col justify-center items-center gap-[100px]'}>
+            <h2 className={'text-8xl text-gray-400'}>Tech Stack</h2>
+            <TechStackScroll/>
           </div>
         </section>
         <section className="w-full ">
@@ -152,17 +163,17 @@ export function AboutUs() {
 
 function CheckIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      <svg
+          {...props}
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
     >
       <path d="M20 6 9 17l-5-5" />
     </svg>
