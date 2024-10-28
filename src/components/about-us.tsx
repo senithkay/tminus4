@@ -15,10 +15,10 @@ export function AboutUs() {
               <div>
                 <h2 className={'text-8xl text-gray-400'}>Design To Code</h2>
                 <p className={'max-w-[600px] text-gray-400 text-2xl text-justify'}>
-                  Transforming design into clean, efficient code is at the heart of what we do. Our approach bridges
+                  {` Transforming design into clean, efficient code is at the heart of what we do. Our approach bridges
                   creativity and functionality, ensuring that every design element is seamlessly brought to life with
                   pixel-perfect accuracy. From user interface concepts to fully responsive web solutions, we turn your
-                  vision into a digital reality with the latest development technologies
+                  vision into a digital reality with the latest development technologies`}
                 </p>
               </div>
               <Compare
