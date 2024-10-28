@@ -43,8 +43,8 @@ const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <nav
-      className={`fixed top-4 left-4 right-4 z-[1003] flex justify-between border-2 border-gray-800 text-white items-center py-2 ${
-        isScrolled ? "bg-white text-black" : "bg-transparent"
+      className={`fixed top-4 left-4 right-4 z-[1003] flex justify-between border-2 border-gray-800 items-center py-2 ${
+        isScrolled ? "bg-white text-black" : "bg-transparent text-white "
       } shadow-xl rounded-full transition-all duration-300`}
     >
       <h1

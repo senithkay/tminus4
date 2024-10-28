@@ -64,17 +64,11 @@ const OurTeam = () => {
               <h3 className="text-xl font-semibold">{member.name}</h3>
               <p className="text-gray-600 mb-5">{member.role}</p>
               <div className="flex justify-center space-x-4 text-gray-500 mt-auto">
-                <a href="#" className="hover:text-blue-600">
-                  <FacebookIcon />
-                </a>
                 <a href="#" className="hover:text-blue-500">
                   <LinkedInIcon />
                 </a>
                 <a href="#" className="hover:text-blue-400">
                   <TwitterIcon />
-                </a>
-                <a href="#" className="hover:text-pink-500">
-                  <BrushIcon />
                 </a>
               </div>
             </div>
@@ -96,17 +90,11 @@ const OurTeam = () => {
               <h3 className="text-xl font-semibold">{member.name}</h3>
               <p className="text-gray-600 mb-5">{member.role}</p>
               <div className="flex justify-center space-x-4 text-gray-500 mt-auto">
-                <a href="#" className="hover:text-blue-600">
-                  <FacebookIcon />
-                </a>
                 <a href="#" className="hover:text-blue-500">
                   <LinkedInIcon />
                 </a>
                 <a href="#" className="hover:text-blue-400">
                   <TwitterIcon />
-                </a>
-                <a href="#" className="hover:text-pink-500">
-                  <BrushIcon />
                 </a>
               </div>
             </div>
