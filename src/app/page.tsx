@@ -181,11 +181,6 @@ export default function Home() {
                               seamless integration, data-driven insights, and unparalleled performance.
                           </p>
 
-                          <div
-                              className={' gap-2.5 text-gray-500 flex flex-col justify-center items-center absolute top-[85vh]'}>
-                              <p className={'text-gray-500'}>Scroll down to get started</p>
-                              <ArrowCircleDownIcon fontSize={'large'}/>
-                          </div>
                       </div>
 
                       <div
