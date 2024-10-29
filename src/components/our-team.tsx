@@ -33,7 +33,7 @@ const OurTeam = () => {
     {
       src: "/images/suresh.png",
       name: "Sureshri Dasanayake",
-      role: "Marketing",
+      role: "Frontend Development",
       text: "Sureshsri leads our marketing efforts, driving brand growth and visibility.",
     },
   ];
