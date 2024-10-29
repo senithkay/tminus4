@@ -209,7 +209,7 @@ export default function Home() {
 
             <div
               className={
-                "min-h-[100vh] absolute top-[100vh] w-full flex flex-col justify-center items-center py-[50px] gap-[100px]  bg-white"
+                "min-h-[100vh] absolute top-[100vh] w-full flex flex-col justify-center items-center   bg-white"
               }
             >
               <div ref={aboutUsRef} className={"flex flex-col gap-[30px]"}>

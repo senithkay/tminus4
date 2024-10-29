@@ -33,6 +33,7 @@ export function AboutUs() {
           </div>
         </section>
         <section className={'w-full h-screen'}>
+
           <AutoplayVideo/>
         </section>
         <section className={'w-full '}>

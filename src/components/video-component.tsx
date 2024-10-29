@@ -5,7 +5,7 @@ import React from 'react';
 const DarkAutoplayVideo = () => {
     return (
         <div className="relative w-full mx-auto">
-            <div className="relative aspect-video bg-black overflow-hidden">
+            <div className="relative bg-black overflow-hidden">
                 {/* Dark overlay */}
                 <div className="absolute inset-0 bg-black/80 z-10" />
                 <div className={'absolute z-[11] text-white flex flex-col justify-center items-center w-full h-full'}>
@@ -17,7 +17,7 @@ const DarkAutoplayVideo = () => {
                 </div>
 
                 <video
-                    className="w-full h-full object-cover"
+                    className="w-full h-screen object-cover"
                     autoPlay
                     muted
                     loop
