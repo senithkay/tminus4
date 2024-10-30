@@ -39,58 +39,32 @@ const OurTeam = () => {
   ];
 
   return (
-    <section className="pb-24  text-center">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold mb-4">Our Experts Team</h2>
-        <p className="text-gray-500 mb-12">
+    <section className="w-full pb-24 text-center bg-gradient-to-br from-gray-800 to-gray-900 text-white">
+      <div className="w-full px-4 sm:px-6 lg:px-8 space-y-12">
+        <h2 className="text-5xl tracking-tight sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white">Our Experts Team</h2>
+        <p className="text-gray-300 text-lg lg:text-xl">
           At T-4, our team consists of a talented group of professionals
           dedicated to delivering innovative and reliable software solutions. We
           pride ourselves on our ability to tackle challenges across various
           domains with creativity and expertise.
         </p>
 
-        {/* First row with 3 cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
-          {teamMembers.slice(0, 3).map((member, index) => (
+        {/* Single row with all cards */}
+        <div className="flex justify-center items-center mb-8 space-x-4 overflow-x-auto">
+          {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-white card-shadow-primary-purple rounded-lg shadow-md p-6 flex flex-col items-center justify-between h-84 w-72 mx-auto  duration-300 hover:bg-gray-200"
+              className="bg-gray-700 rounded-lg shadow-lg p-4 flex flex-col items-center justify-between h-72 w-52 transition-transform duration-300 transform hover:scale-105 hover:bg-gray-600"
             >
               <img
                 src={member.src}
                 alt={member.name}
-                className="w-40 h-40 rounded-full object-cover mb-4"
+                className="w-32 h-32 rounded-full object-cover mb-4 border-4 border-gray-500"
               />
-              <h3 className="text-xl font-semibold">{member.name}</h3>
-              <p className="text-gray-600 mb-5">{member.role}</p>
+              <h3 className="text-lg font-semibold">{member.name}</h3>
+              <p className="text-gray-300 mb-3">{member.role}</p>
               <div className="flex justify-center space-x-4 text-gray-500 mt-auto">
-                <a href="#" className="hover:text-blue-500">
-                  <LinkedInIcon />
-                </a>
                 <a href="#" className="hover:text-blue-400">
-                  <TwitterIcon />
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Second row with 2 cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {teamMembers.slice(3).map((member, index) => (
-            <div
-              key={index}
-              className="bg-white card-shadow-primary-purple rounded-lg shadow-md p-6 flex flex-col items-center justify-between h-84 w-72 mx-auto  duration-300 hover:bg-gray-200"
-            >
-              <img
-                src={member.src}
-                alt={member.name}
-                className="w-40 h-40 rounded-full object-cover mb-4"
-              />
-              <h3 className="text-xl font-semibold">{member.name}</h3>
-              <p className="text-gray-600 mb-5">{member.role}</p>
-              <div className="flex justify-center space-x-4 text-gray-500 mt-auto">
-                <a href="#" className="hover:text-blue-500">
                   <LinkedInIcon />
                 </a>
                 <a href="#" className="hover:text-blue-400">
