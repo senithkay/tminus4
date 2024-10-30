@@ -39,9 +39,9 @@ const OurTeam = () => {
   ];
 
   return (
-    <section className="w-full pb-24 text-center bg-gradient-to-br from-gray-800 to-gray-900 text-white">
+    <section className="w-full pb-24 text-center bg-gradient-to-br from-gray-800 to-gray-900 text-white pt-10">
       <div className="w-full px-4 sm:px-6 lg:px-8 space-y-12">
-        <h2 className="text-5xl tracking-tight sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white">Our Experts Team</h2>
+        <h2 className="text-5xl tracking-tight sm:text-6xl md:text-7xl font-extrabold text-white">Our Experts Team</h2>
         <p className="text-gray-300 text-lg lg:text-xl">
           At T-4, our team consists of a talented group of professionals
           dedicated to delivering innovative and reliable software solutions. We

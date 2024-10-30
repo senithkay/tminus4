@@ -247,13 +247,13 @@ export default function Home() {
                 <ContactUs />
               </div>
 
-              <div className={"flex flex-col gap-[30px]"}>
-                <footer className="bg-muted py-12 md:py-16 w-full">
+              <div className={"flex flex-col gap-[30px] bg-gradient-to-br from-gray-600 to-gray-900 w-full justify-center items-center" }>
+                <footer className="bg-muted py-12 md:py-16 w-full  flex justify-center items-center ">
                   <div className="container max-w-7xl flex flex-col  items-center justify-between gap-6 text-sm">
                     <div className="flex flex-col items-center gap-6">
                       <div
                         className={
-                          "flex flex-col items-center justify-center gap-2.5"
+                          "flex flex-col items-center justify-center text-white gap-2.5"
                         }
                       >
                         <div className={"flex"}>
@@ -267,13 +267,13 @@ export default function Home() {
                             <span className={finger.className}>T - 4</span>
                           </h3>
                         </div>
-                        <p className="text-muted-foreground">
+                        <p className="text-white">
                           &copy; 2024 Tminus4. All rights reserved.
                         </p>
                       </div>
                     </div>
-                    <nav className="flex items-center gap-4 md:gap-6">
-                      <ul className={"  gap-2.5 md:flex"}>
+                    <nav className="flex items-center gap-4 md:gap-6 text-white">
+                      <ul className={"  gap-20 md:flex"}>
                         <li>
                           <button
                             onClick={() => scrollToSection(servicesRef)}
@@ -321,15 +321,15 @@ export default function Home() {
                         href="#"
                         className="flex items-center gap-2 hover:underline underline-offset-4"
                       >
-                        <MailIcon className="w-5 h-5" />
-                        <span>tivitytest101@gmail.com</span>
+                        <MailIcon className="w-5 h-5 " />
+                        <span className="text-gray-300">tivitytest101@gmail.com</span>
                       </a>
                       <a
                         href="#"
                         className="flex items-center gap-2 hover:underline underline-offset-4"
                       >
                         <PhoneIcon className="w-5 h-5" />
-                        <span>+94 (76) 8510403</span>
+                        <span className=" text-gray-300">+94 (76) 8510403</span>
                       </a>
                     </div>
                   </div>

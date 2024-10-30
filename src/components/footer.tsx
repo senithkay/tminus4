@@ -4,7 +4,7 @@ import { JSX, SVGProps } from "react"
 
 export function Footer() {
   return (
-      <footer className="bg-muted py-12 md:py-16 w-full">
+      <footer className="bg-muted py-12 md:py-16 w-full bg-gradient-to-br from-gray-800 to-gray-900">
         <div className="container max-w-7xl flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
           <div className="flex items-center gap-4">
             <Link href="#" prefetch={false}>
