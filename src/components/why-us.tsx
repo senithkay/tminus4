@@ -2,12 +2,12 @@ import { JSX, SVGProps } from "react";
 
 export function WhyUs() {
   return (
-    <section className="w-full py-16 md:py-28 bg-gradient-to-br from-indigo-100 to-blue-200">
-      <div className="">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="text-5xl font-extrabold tracking-tight text-indigo-900">Why Choose Us?</h2>
-            <p className="max-w-[800px] mx-auto text-gray-700 text-lg lg:text-xl">
+    <section className="w-full py-16 md:py-28 bg-gradient-to-br from-gray-800 to-gray-900">
+      <div className="space-y-12">
+        <div className="flex flex-col items-center justify-center space-y-8 text-center">
+          <div className="space-y-12">
+            <h2 className="text-5xl tracking-tight sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white">Why Choose Us?</h2>
+            <p className="max-w-[800px] mx-auto text-gray-300 text-lg lg:text-xl">
               At our company, we are driven by a mission to empower businesses with cutting-edge technology and
               exceptional customer service. With several years of industry experience, we have honed our expertise to
               deliver innovative solutions that help our clients thrive.
@@ -18,15 +18,15 @@ export function WhyUs() {
           {reasonsData.map((reason, index) => (
             <div
               key={index}
-              className="p-8 rounded-xl bg-white shadow-lg transform transition-transform duration-300 hover:scale-105 border-2 border-gray-200 hover:border-indigo-500"
+              className="p-8 rounded-xl bg-gray-700 shadow-lg transform transition-transform duration-300 hover:scale-105 border-2 border-gray-600 hover:bg-gray-700"
             >
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 rounded-md bg-indigo-100 text-indigo-600">
+                <div className="p-3 bg-indigo-900 rounded-md text-indigo-200">
                   {reason.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">{reason.title}</h3>
+                <h3 className="text-xl font-semibold text-white">{reason.title}</h3>
               </div>
-              <p className="text-gray-700 text-base">{reason.description}</p>
+              <p className="text-gray-300 text-base">{reason.description}</p>
             </div>
           ))}
         </div>
