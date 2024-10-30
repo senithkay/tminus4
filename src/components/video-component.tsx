@@ -17,13 +17,13 @@ const DarkAutoplayVideo = () => {
                 </div>
 
                 <video
-                    className="w-full h-screen object-cover"
+                    className=" w-full h-screen  "
                     autoPlay
                     muted
                     loop
                     playsInline
                 >
-                    <source src={'/videos/black_hole.mp4'} type="video/mp4" />
+                    <source src={'/videos/Bgv2.mp4'} type="video/mp4" />
                     {` Your browser does not support the video.`}
                 </video>
             </div>
