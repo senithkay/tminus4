@@ -215,12 +215,15 @@ export default function Home() {
               <div ref={aboutUsRef} className={"flex flex-col gap-[30px]"}>
                 <AboutUs />
               </div>
-              <div ref={servicesRef} className={"flex flex-col gap-[30px]"}>
+              {/* <div ref={servicesRef} className={"flex flex-col gap-[30px]"}>
                 <h1
                   className={` text-6xl font-bold text-center  transition-opacity duration-[1000] ease-linear`}
                 >
                   Our Services
                 </h1>
+              </div> */}
+              <div ref={productsRef} className={"flex flex-col gap-[30px]"}>
+                <PrebuildProducts />
               </div>
 
               <div className={"flex flex-col gap-[30px]"}>
@@ -229,10 +232,6 @@ export default function Home() {
 
               <div className={"flex flex-col gap-[30px] "}>
                 <CustomerReviews />
-              </div>
-
-              <div ref={productsRef} className={"flex flex-col gap-[30px]"}>
-                <PrebuildProducts />
               </div>
 
               <div ref={teamRef} className={"flex flex-col gap-[30px]"}>

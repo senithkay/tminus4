@@ -1,100 +1,75 @@
-import { JSX, SVGProps } from "react"
+import { JSX, SVGProps } from "react";
 
 export function WhyUs() {
   return (
-      <section className="w-full ">
-        <div className="container px-4 md:px-6 space-y-12">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Why Choose US?</h2>
-              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                At our company, we are driven by a mission to empower businesses with cutting-edge technology
-                and
-                exceptional customer service. With several years of industry experience, we have honed our expertise to
-                deliver innovative solutions that help our clients thrive.
-              </p>
-            </div>
-          </div>
-          <div
-              className="mx-auto grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
-            <div className="grid gap-1 card-shadow-primary-pink p-[10px] rounded-[20px] hover:scale-[1.03] transition-all duration-500">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary rounded-md p-3 flex items-center justify-center">
-                  <AwardIcon className="w-6 h-6 text-primary-foreground"/>
-                </div>
-                <h3 className="text-lg font-bold">Industry-Leading Expertise</h3>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Our team of seasoned professionals bring years of experience in the software industry, ensuring your
-                project is in the hands of true experts.
-              </p>
-            </div>
-            <div className="grid gap-1 card-shadow-primary-purple p-[10px] rounded-[20px] hover:scale-[1.03] transition-all duration-500">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary rounded-md p-3 flex items-center justify-center">
-                  <RocketIcon className="w-6 h-6 text-primary-foreground"/>
-                </div>
-                <h3 className="text-lg font-bold">Innovative Technology</h3>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                We stay at the forefront of technological advancements, ensuring our solutions are built on the latest
-                and
-                most reliable frameworks and tools.
-              </p>
-            </div>
-            <div className="grid gap-1 card-shadow-primary-pink p-[10px] rounded-[20px] hover:scale-[1.03] transition-all duration-500">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary rounded-md p-3 flex items-center justify-center">
-                  <UsersIcon className="w-6 h-6 text-primary-foreground"/>
-                </div>
-                <h3 className="text-lg font-bold">Customer-Centric Approach</h3>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Our unwavering commitment to customer satisfaction is at the heart of everything we do. We work closely
-                with our clients to understand their unique needs and deliver tailored solutions.
-              </p>
-            </div>
-            <div className="grid gap-1 card-shadow-primary-purple p-[10px] rounded-[20px] hover:scale-[1.03] transition-all duration-500">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary rounded-md p-3 flex items-center justify-center">
-                  <ClockIcon className="w-6 h-6 text-primary-foreground"/>
-                </div>
-                <h3 className="text-lg font-bold">Years of Experience</h3>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                With years of experience in the software industry, we have the knowledge and expertise to tackle
-                even the most complex challenges.
-              </p>
-            </div>
-            <div className="grid gap-1 card-shadow-primary-pink p-[10px] rounded-[20px] hover:scale-[1.03] transition-all duration-500">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary rounded-md p-3 flex items-center justify-center">
-                  <TrophyIcon className="w-6 h-6 text-primary-foreground"/>
-                </div>
-                <h3 className="text-lg font-bold">Commitment to Quality and Security</h3>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                {`Quality and security are at the core of everything we do. Our solutions are rigorously tested and compliant with industry standards, giving you peace of mind.`}
-              </p>
-            </div>
-            <div className="grid gap-1 card-shadow-primary-purple p-[10px] rounded-[20px] hover:scale-[1.03] transition-all duration-500">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary rounded-md p-3 flex items-center justify-center">
-                  <BriefcaseIcon className="w-6 h-6 text-primary-foreground"/>
-                </div>
-                <h3 className="text-lg font-bold">Diverse Industry Experience</h3>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Our team has worked with clients across a wide range of industries, giving us a deep understanding of
-                the
-                unique challenges and requirements of various sectors.
-              </p>
-            </div>
+    <section className="w-full py-16 md:py-28 bg-gradient-to-br from-indigo-100 to-blue-200">
+      <div className="">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <h2 className="text-5xl font-extrabold tracking-tight text-indigo-900">Why Choose Us?</h2>
+            <p className="max-w-[800px] mx-auto text-gray-700 text-lg lg:text-xl">
+              At our company, we are driven by a mission to empower businesses with cutting-edge technology and
+              exceptional customer service. With several years of industry experience, we have honed our expertise to
+              deliver innovative solutions that help our clients thrive.
+            </p>
           </div>
         </div>
-      </section>
-  )
+        <div className="mx-auto grid items-start gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+          {reasonsData.map((reason, index) => (
+            <div
+              key={index}
+              className="p-8 rounded-xl bg-white shadow-lg transform transition-transform duration-300 hover:scale-105 border-2 border-gray-200 hover:border-indigo-500"
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 rounded-md bg-indigo-100 text-indigo-600">
+                  {reason.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">{reason.title}</h3>
+              </div>
+              <p className="text-gray-700 text-base">{reason.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
+
+const reasonsData = [
+  {
+    title: "Industry-Leading Expertise",
+    description: "Our team of seasoned professionals bring years of experience, ensuring your project is in expert hands.",
+    icon: <AwardIcon />,
+  },
+  {
+    title: "Innovative Technology",
+    description: "We stay at the forefront of advancements, ensuring our solutions use the latest and most reliable tools.",
+    icon: <RocketIcon />,
+  },
+  {
+    title: "Customer-Centric Approach",
+    description: "Our commitment to customer satisfaction is at the heart of everything we do, with tailored solutions.",
+    icon: <UsersIcon />,
+  },
+  {
+    title: "Years of Experience",
+    description: "With years in the industry, we have the expertise to tackle even the most complex challenges.",
+    icon: <ClockIcon />,
+  },
+  {
+    title: "Committed to Quality and Security",
+    description: "Quality and security are central, with rigorous testing and industry compliance.",
+    icon: <TrophyIcon />,
+  },
+  {
+    title: "Diverse Industry Experience",
+    description: "We've worked across various industries, giving us a deep understanding of unique sector challenges.",
+    icon: <BriefcaseIcon />,
+  },
+];
+
+// SVG icon components remain unchanged
+
 
 function AwardIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (

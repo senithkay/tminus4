@@ -3,8 +3,8 @@ import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar"
 
 export function CustomerReviews() {
   return (
-    <section className="w-full ">
-      <div className="container px-4 md:px-6">
+    <section className="w-full py-12 md:py-24 bg-muted">
+      <div className="container px-4 md:px-6 space-y-10">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">What Our Recent Customers Are Saying</h2>

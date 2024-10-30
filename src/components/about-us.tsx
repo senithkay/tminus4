@@ -6,10 +6,10 @@ import {Compare} from "@/components/ui/compare";
 
 export function AboutUs() {
   return (
-      <div>
+      <div className="">
         <section className={'w-full '}>
           <div
-              className={'w-full px-[300px] h-screen bg-black text-white text-4xl text-bold flex flex-col justify-center items-center gap-[100px]'}>
+              className={'w-full px-[300px]  bg-black text-white text-4xl text-bold flex flex-col justify-center items-center gap-[100px]'}>
 
             <div className={'flex gap-3 items-center'}>
               <div>
@@ -32,7 +32,7 @@ export function AboutUs() {
             </div>
           </div>
         </section>
-        <section className={'w-full h-screen'}>
+        <section className={'w-full '}>
 
           <AutoplayVideo/>
         </section>
@@ -43,9 +43,9 @@ export function AboutUs() {
             <TechStackScroll/>
           </div>
         </section>
-        <section className="w-full ">
+        {/* <section className="w-full ">
           <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-            <div className="flex justify-center order-2 lg:order-1">
+            <div className="flex justify-center order-2 lg:order-1 bg-blue-500">
               <img
                   src="/images/core-values.svg"
                   width="500"
@@ -106,7 +106,7 @@ export function AboutUs() {
           </div>
         </section>
         <section className="w-full  bg-muted md:mt-1 mt-[30px]">
-          <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
+          <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10 ">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Our Goals and
                 Achievements</h2>
@@ -157,7 +157,7 @@ export function AboutUs() {
               />
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
   )
 }

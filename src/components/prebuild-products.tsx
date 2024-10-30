@@ -2,210 +2,85 @@ import { JSX, SVGProps } from "react";
 
 export function PrebuildProducts() {
   return (
-    <section className="w-full py-12 md:py-24 bg-muted">
-      <div className="container grid items-center justify-center gap-12 px-4 md:px-6">
-        <div className="space-y-3 text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+    <section className="w-full py-16 md:py-28 bg-gradient-to-br from-gray-900 to-black text-white">
+      <div className="w-full grid items-center justify-center gap-16 px-6 md:px-8 ">
+        <div className="space-y-4 text-center animate-fadeIn">
+          <h2 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl text-gray-400">
             Customizable Pre-Build Software Solutions
           </h2>
-          <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            {`We offer a range of pre-built software solutions that can be easily customized to meet your specific needs.`}
+          <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl lg:text-lg">
+            We offer a range of pre-built software solutions that can be easily customized to meet your specific needs.
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2">
-          <div className="grid gap-8 max-w-2xl mx-auto px-4 py-8 sm:px-6 lg:px-8 shadow-lg rounded-[20px]">
-            <div className="grid gap-4">
-              <h1 className="text-3xl font-bold">
-                Secure Attendance Management System
-              </h1>
-              <p className="text-muted-foreground">
-                {`Our Secure Attendance Marking System is a robust solution designed for educational institutes and organizations, ensuring accurate and secure attendance tracking.`}{" "}
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="grid gap-4 ">
-                <div className="flex items-center gap-4">
-                  <div className="bg-muted rounded-md p-2 flex items-center justify-center">
-                    <LightbulbIcon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Fool-proof Attendance Marking</h3>
-                    <p className="text-muted-foreground text-sm">
-                      {`Prevents any form of proxy attendance, guaranteeing authenticity.`}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-muted rounded-md p-2 flex items-center justify-center">
-                    <PaletteIcon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">
-                      Real-Time Data Synchronization
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      {`Instantly syncs attendance data with the central database, ensuring up-to-date records at all times.`}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-muted rounded-md p-2 flex items-center justify-center">
-                    <TimerIcon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Comprehensive Reporting</h3>
-                    <p className="text-muted-foreground text-sm">
-                      {`Customizable reports to meet the specific needs of different departments or management levels.`}
-                    </p>
-                  </div>
-                </div>
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+          {productData.map((product, index) => (
+            <div
+              key={index}
+              className="relative group transform transition-all duration-300 hover:scale-105 shadow-xl rounded-xl p-8 sm:px-10 bg-gray-800 border-2 border-gray-700 hover:bg-gray-700"
+            >
+              <div className="grid gap-6">
+                <h3 className="text-2xl font-bold text-gray-200">{product.title}</h3>
+                <p className="text-gray-400">{product.description}</p>
               </div>
-              <div className="grid gap-4">
-                <div className="flex  gap-4">
-                  <div className="bg-muted rounded-md p-2 flex  justify-center">
-                    <WifiIcon className="w-6 h-6" />
+              <div className="grid gap-4 mt-4">
+                {product.features.map((feature, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-4 group-hover:scale-105 transition-all duration-300"
+                  >
+                    <div className="p-3 bg-indigo-900 rounded-md text-indigo-200 hover:bg-indigo-700 transition duration-300">
+                      {feature.icon}
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-100">{feature.name}</h4>
+                      <p className="text-sm text-gray-400">{feature.detail}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold">Integration Capabilities</h3>
-                    <p className="text-muted-foreground text-sm">
-                      {`Easily integrates with existing internal systems or academic management systems for seamless data flow.`}
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
-          </div>
-          <div className="grid gap-8 max-w-2xl mx-auto px-4 py-8 sm:px-6 lg:px-8 shadow-lg rounded-[20px]">
-            <div className="grid gap-4">
-              <h1 className="text-3xl font-bold">
-                Report and Document Generator Tool
-              </h1>
-              <p className="text-muted-foreground">
-                Our Report and Document Generator Tool leverages JasperReports
-                to create dynamic templates that can be seamlessly populated
-                with business data from your existing databases.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="grid gap-4">
-                <div className="flex items-center gap-4">
-                  <div className="bg-muted rounded-md p-2 flex items-center justify-center">
-                    <LightbulbIcon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Data Integration</h3>
-                    <p className="text-muted-foreground text-sm">
-                      {`Automatically pull and populate data from your business databases into the templates.`}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-muted rounded-md p-2 flex items-center justify-center">
-                    <PaletteIcon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Easy Integration</h3>
-                    <p className="text-muted-foreground text-sm">
-                      {`Integrate the tool effortlessly with your existing business software, ensuring smooth operation within your workflow.`}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-muted rounded-md p-2 flex items-center justify-center">
-                    <TimerIcon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Multi-Format Output</h3>
-                    <p className="text-muted-foreground text-sm">
-                      {`Generate reports in various formats such as PDF, Excel, Word, and HTML.`}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="grid gap-4">
-                <div className="flex gap-4">
-                  <div className="bg-muted rounded-md p-2 flex  justify-center">
-                    <WifiIcon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Customization</h3>
-                    <p className="text-muted-foreground text-sm">
-                      {
-                        "Modify templates to meet specific business needs, ensuring that reports are aligned with your brand and operational requirements."
-                      }
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="grid gap-8 max-w-2xl mx-auto px-4 py-8 sm:px-6 lg:px-8 shadow-lg rounded-[20px]">
-            <div className="grid gap-4">
-              <h1 className="text-3xl font-bold">Email Marketing Solution</h1>
-              <p className="text-muted-foreground">
-                {`Our Email Marketing Solution empowers businesses to connect with their audience effectively through personalized and targeted email campaigns. `}
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="grid gap-4">
-                <div className="flex items-center gap-4">
-                  <div className="bg-muted rounded-md p-2 flex items-center justify-center">
-                    <LightbulbIcon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Automation and Workflows</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Set up automated workflows for welcome emails, follow-ups,
-                      abandoned cart reminders, and more.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-muted rounded-md p-2 flex items-center justify-center">
-                    <PaletteIcon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Schedule campaigns</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Schedule campaigns in advance to reach your audience at
-                      the optimal time.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="bg-muted rounded-md p-2 flex items-center justify-center">
-                    <TimerIcon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Integration Capabilities</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Seamlessly integrate with existing business tools for a
-                      streamlined marketing process.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="grid gap-4">
-                <div className="flex gap-4">
-                  <div className="bg-muted rounded-md p-2 flex justify-center">
-                    <WifiIcon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold">Compliance and Security</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Secure data handling and encryption to protect your
-                      customer information.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
   );
 }
+
+const productData = [
+  {
+    title: "Secure Attendance Management System",
+    description: "A robust solution for accurate, secure attendance tracking in organizations.",
+    features: [
+      { name: "Fool-proof Attendance", detail: "Prevents proxy attendance.", icon: <LightbulbIcon /> },
+      { name: "Real-Time Sync", detail: "Up-to-date records at all times.", icon: <PaletteIcon /> },
+      { name: "Comprehensive Reporting", detail: "Customizable reports.", icon: <TimerIcon /> },
+      { name: "Integration Capabilities", detail: "Seamless data flow with existing systems.", icon: <WifiIcon /> },
+    ]
+  },
+  {
+    title: "Report and Document Generator Tool",
+    description: "Generates reports using JasperReports, easily integrates with business databases.",
+    features: [
+      { name: "Data Integration", detail: "Populates data into templates.", icon: <LightbulbIcon /> },
+      { name: "Easy Integration", detail: "Smooth operation within workflow.", icon: <PaletteIcon /> },
+      { name: "Multi-Format Output", detail: "Generates PDF, Excel, Word.", icon: <TimerIcon /> },
+      { name: "Customization", detail: "Align reports with brand needs.", icon: <WifiIcon /> },
+    ]
+  },
+  {
+    title: "Email Marketing Solution",
+    description: "Connect with your audience via personalized email campaigns.",
+    features: [
+      { name: "Automation", detail: "Automated workflows for campaigns.", icon: <LightbulbIcon /> },
+      { name: "Scheduled Campaigns", detail: "Send at optimal times.", icon: <PaletteIcon /> },
+      { name: "Integration Capabilities", detail: "Streamlined marketing processes.", icon: <TimerIcon /> },
+      { name: "Compliance & Security", detail: "Secure data handling.", icon: <WifiIcon /> },
+    ]
+  }
+];
+
+// SVG icons remain unchanged
+
 
 function PaletteIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
