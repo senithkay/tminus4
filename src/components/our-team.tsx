@@ -50,7 +50,7 @@ const OurTeam = () => {
         </p>
 
         {/* Single row with all cards */}
-        <div className="flex justify-center items-center mb-8 space-x-4 overflow-x-auto">
+        <div className="flex justify-center items-center mb-8 space-x-4 overflow-hidden">
           {teamMembers.map((member, index) => (
             <div
               key={index}
