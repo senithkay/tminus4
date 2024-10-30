@@ -2,7 +2,7 @@ import { JSX, SVGProps } from "react";
 
 export function WhyUs() {
   return (
-    <section className="w-full py-16 md:py-28 bg-gradient-to-br from-black to-gray-800">
+    <section className="w-full py-16 md:py-28 bg-gradient-to-br from-black to-gray-800  px-6">
       <div className="space-y-12">
         <div className="flex flex-col items-center justify-center space-y-8 text-center">
           <div className="space-y-12">
