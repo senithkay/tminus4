@@ -1,10 +1,11 @@
+"use client"
+
 import React, { useState, useEffect } from 'react';
 import Image from "next/image";
 
 const TechStackScroll = () => {
     const [position, setPosition] = useState(0);
 
-    // Sample tech stack data - replace with your own icons
     const techStack = [
         { name: 'React', icon: '/reactjs.svg' },
         { name: 'Nodejs', icon: '/nodejs.svg' },
@@ -27,17 +28,15 @@ const TechStackScroll = () => {
         { name: 'TailwindCSS', icon: '/tailwind.svg' },
     ];
 
-    // Duplicate the array to create seamless loop
     const duplicatedStack = [...techStack, ...techStack];
 
     useEffect(() => {
         const animate = () => {
             setPosition((prevPosition) => {
-                // Reset position when all icons have scrolled
                 if (prevPosition <= -50 * techStack.length) {
                     return 0;
                 }
-                return prevPosition - 0.5; // Adjust speed by changing this value
+                return prevPosition - 0.5;
             });
         };
 
@@ -46,9 +45,9 @@ const TechStackScroll = () => {
     }, [techStack.length]);
 
     return (
-        <div className="w-full overflow-hidden bg-transparent py-8">
+        <div className="w-full overflow-hidden bg-transparent py-6 sm:py-8">
             <div
-                className="flex items-center gap-12 whitespace-nowrap"
+                className="flex items-center gap-6 sm:gap-10 whitespace-nowrap"
                 style={{
                     transform: `translateX(${position}px)`,
                     transition: 'transform 0.03s linear'
@@ -57,9 +56,15 @@ const TechStackScroll = () => {
                 {duplicatedStack.map((tech, index) => (
                     <div
                         key={`${tech.name}-${index}`}
-                        className="flex flex-col items-center justify-center min-w-20 px-4"
+                        className="flex flex-col items-center justify-center min-w-[60px] sm:min-w-[80px] px-2 sm:px-4"
                     >
-                        <Image width={100} height={100} src={`${tech.icon}`} alt={`${tech.name}`}/>
+                        <Image
+                            width={60}
+                            height={60}
+                            className="sm:w-[80px] sm:h-[80px] object-contain"
+                            src={tech.icon}
+                            alt={tech.name}
+                        />
                     </div>
                 ))}
             </div>

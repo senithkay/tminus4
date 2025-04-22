@@ -1,22 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "@fontsource/space-grotesk"; /* Imports regular weight by default */
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
+    --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
 }
-
-
 
 @layer utilities {
   .text-balance {
@@ -25,10 +24,18 @@
 }
 
 .card-shadow-primary-pink {
-  box-shadow: rgba(235, 54, 120, 0.25) 0px 54px 55px, rgba(235, 54, 120, 0.12) 0px -12px 30px, rgba(235, 54, 120, 0.12) 0px 4px 6px, rgba(235, 54, 120, 0.17) 0px 12px 13px, rgba(235, 54, 120, 0.09) 0px -3px 5px;
+  box-shadow: rgba(235, 54, 120, 0.25) 0px 54px 55px,
+              rgba(235, 54, 120, 0.12) 0px -12px 30px,
+              rgba(235, 54, 120, 0.12) 0px 4px 6px,
+              rgba(235, 54, 120, 0.17) 0px 12px 13px,
+              rgba(235, 54, 120, 0.09) 0px -3px 5px;
 }
 .card-shadow-primary-purple {
-  box-shadow: rgba(79, 23, 135, 0.25) 0px 54px 55px, rgba(79, 23, 135, 0.12) 0px -12px 30px, rgba(79, 23, 135, 0.12) 0px 4px 6px, rgba(79, 23, 135, 0.17) 0px 12px 13px, rgba(79, 23, 135, 0.09) 0px -3px 5px;
+  box-shadow: rgba(79, 23, 135, 0.25) 0px 54px 55px,
+              rgba(79, 23, 135, 0.12) 0px -12px 30px,
+              rgba(79, 23, 135, 0.12) 0px 4px 6px,
+              rgba(79, 23, 135, 0.17) 0px 12px 13px,
+              rgba(79, 23, 135, 0.09) 0px -3px 5px;
 }
 .card-small-shadow-pink {
   box-shadow: rgba(235, 54, 120, 0.12) 0px 2px 8px 0px;
@@ -42,3 +49,18 @@
 .animate-fadeIn {
   animation: fadeIn 0.7s ease-out both;
 }
+
+/* ✅ Add this to make background black globally */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #2d2d2d, #1a1a1a); /* match your section */
+}
+
+/* globals.css or any global style file */
+body {
+  overflow: hidden;
+}
+
+
+

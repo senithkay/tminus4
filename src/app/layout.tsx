@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
-import { Roboto, Oxanium } from 'next/font/google';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import { Space_Grotesk } from 'next/font/google';
+import "@fontsource/space-grotesk/300.css";
+import "@fontsource/space-grotesk/400.css";
+import "@fontsource/space-grotesk/500.css";
+import "@fontsource/space-grotesk/700.css";
+
+
 import { Analytics } from "@vercel/analytics/react"
 
 
 
 import "./globals.css";
 import React from "react";
-import Navbar from "@/app/components/navbar";
+import Navbar from "@/components/navbar";
+import { FooterNew } from "@/components/FooterNew";
 
-const oxanium = Oxanium({
+const SpaceGrotesk = Space_Grotesk({
   weight: '400',
   subsets: ['latin'],
 })
@@ -29,12 +32,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={oxanium.className + ' dark:bg-black overflow-x-hidden'}>
-      <Analytics />
-      <div className={'w-full relative '}>
-        {children}
-      </div>
+      <body className={SpaceGrotesk.className + '  overflow-x-hidden verflow-y-hidden'}>
+        <Analytics />
+        <div className={'w-full relative  overflow-x-hidden verflow-y-hidden'}>
+          {children}
+        </div>
+        <footer>
+          <FooterNew />
+        </footer>
       </body>
     </html>
   );
+
 }

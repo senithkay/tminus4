@@ -1,8 +1,8 @@
 import React from "react";
-import FacebookIcon from "@mui/icons-material/Facebook";
+import Tilt from "react-parallax-tilt";
+import { motion } from "framer-motion";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import BrushIcon from "@mui/icons-material/Brush"; // Placeholder for Behance
 
 const OurTeam = () => {
   const teamMembers = [
@@ -10,68 +10,100 @@ const OurTeam = () => {
       src: "/images/me2.png",
       name: "Senith Uthsara",
       role: "Deployment Lead",
-      text: " Senith ensures that all deployments run smoothly and that our customers receive the best possible experience. He is the key point of contact for client queries and support.",
+      text: "Senith ensures that all deployments run smoothly and that our customers receive the best possible experience.",
+    },
+    {
+      src: "/images/suresh.png",
+      name: "Sureshri Dasanayake",
+      role: "Frontend Developer",
+      text: "Sureshri leads our Frontend Development with creativity and precision.",
+    },
+    {
+      src: "/images/lahiru.png",
+      name: "Lahiru Sanjana",
+      role: "Backend & QA",
+      text: "Lahiru ensures our backend is robust and efficient, with a strong focus on quality.",
     },
     {
       src: "/images/samitha.png",
       name: "Samitha Rathnayake",
       role: "Strategic Lead",
-      text: "Samitha drives our company's strategic initiatives. He also plays a crucial role in maintaining strong relationships with our customers.",
-    },
-    {
-      src: "/images/kavinda.png",
-      name: "Kavinda Medagoda",
-      role: "UI/UX and Frontend",
-      text: "Kavinda is the creative force behind our user interfaces, ensuring that our products are not only functional but also visually appealing and user-friendly.",
-    },
-    {
-      src: "/images/lahiru.png",
-      name: "Lahiru Sanjana",
-      role: "Backend Applications and Quality",
-      text: "Lahiru is responsible for the robustness and quality of our backend applications. His attention to detail ensures that our systems are reliable and efficient.",
-    },
-    {
-      src: "/images/suresh.png",
-      name: "Sureshri Dasanayake",
-      role: "Frontend Development",
-      text: "Sureshsri leads our Frontend Development.",
+      text: "Samitha drives our strategy and maintains strong customer relationships.",
     },
   ];
 
-  return (
-    <section className="w-full pb-24 text-center bg-gradient-to-br from-gray-800 to-gray-900 text-white pt-10">
-      <div className="w-full px-4 sm:px-6 lg:px-8 space-y-12">
-        <h2 className="text-5xl tracking-tight sm:text-6xl md:text-7xl font-extrabold text-white">Our Experts Team</h2>
-        <p className="text-gray-300 text-lg lg:text-xl">
-          At T-4, our team consists of a talented group of professionals
-          dedicated to delivering innovative and reliable software solutions. We
-          pride ourselves on our ability to tackle challenges across various
-          domains with creativity and expertise.
-        </p>
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.2, duration: 0.6 },
+    }),
+  };
 
-        {/* Single row with all cards */}
-        <div className="flex justify-center items-center mb-8 space-x-4 overflow-hidden">
+  return (
+    <section className="w-full pb-24 bg-gradient-to-br from-gray-800 to-gray-900 text-white pt-10">
+      <div className="w-full px-4 sm:px-6 lg:px-8 space-y-12">
+        <motion.h2
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-5xl tracking-tight sm:text-6xl md:text-7xl font-extrabold text-center"
+        >
+          Our Experts Team
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-gray-300 text-lg lg:text-xl text-center w-full mx-auto"
+        >
+          At T-4, our team is passionate, experienced, and driven by innovation.
+          We’re committed to delivering excellence through collaboration and creativity.
+        </motion.p>
+
+        {/* Responsive Grid */}
+        <div className="flex flex-wrap justify-center gap-8 mt-10">
           {teamMembers.map((member, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-gray-700 rounded-lg shadow-lg p-4 flex flex-col items-center justify-between h-72 w-52 transition-transform duration-300 transform hover:scale-105 hover:bg-gray-600"
+              className="w-72"
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={cardVariants}
             >
-              <img
-                src={member.src}
-                alt={member.name}
-                className="w-32 h-32 rounded-full object-cover mb-4 border-4 border-gray-500"
-              />
-              <h3 className="text-lg font-semibold">{member.name}</h3>
-              <p className="text-gray-300 mb-3">{member.role}</p>
-              <div className="flex justify-center space-x-4 text-gray-500 mt-auto">
-                <a href="#" className="hover:text-blue-400">
-                  <LinkedInIcon />
-                </a>
-                <a href="#" className="hover:text-blue-400">
-                  <TwitterIcon />
-                </a>
-              </div>
-            </div>
+              <Tilt
+                tiltMaxAngleX={10}
+                tiltMaxAngleY={10}
+                scale={1.02}
+                transitionSpeed={1000}
+                className="bg-gray-700 bg-opacity-30 backdrop-blur-md border border-gray-600 rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-300"
+              >
+                <div className="flex flex-col items-center text-center space-y-3">
+                  <img
+                    src={member.src}
+                    alt={member.name}
+                    className="w-28 h-28 rounded-full object-cover border-4 border-gray-500"
+                  />
+                  <h3 className="text-lg font-semibold">{member.name}</h3>
+                  <p className="text-blue-300 text-sm">{member.role}</p>
+                  <p className="text-gray-400 text-sm">{member.text}</p>
+                  <div className="flex justify-center gap-4 mt-2 text-gray-400">
+                    <a href="#" className="hover:text-blue-500 transition-all duration-200">
+                      <LinkedInIcon />
+                    </a>
+                    <a href="#" className="hover:text-blue-400 transition-all duration-200">
+                      <TwitterIcon />
+                    </a>
+                  </div>
+                </div>
+              </Tilt>
+            </motion.div>
           ))}
         </div>
       </div>
