@@ -1,49 +1,18 @@
 "use client";
-import React, { JSX, SVGProps, useEffect, useRef, useState } from "react";
-import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
+import React, {  useEffect, useRef, useState } from "react";
 import { WhyUs } from "@/components/why-us";
-import { CustomerReviews } from "@/components/customer-reviews";
 import { ContactUs } from "@/components/contact-us";
-import { Footer } from "@/components/footer";
 import { AboutUs } from "@/components/about-us";
 import { PrebuildProducts } from "@/components/prebuild-products";
-import Link from "next/link";
-import { Button } from "@mui/material";
 import Navbar from "@/components/navbar";
-import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
-import MenuIcon from "@mui/icons-material/Menu";
-import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
-import ConstructionIcon from "@mui/icons-material/Construction";
-import SupportIcon from "@mui/icons-material/Support";
-import PsychologyIcon from "@mui/icons-material/Psychology";
-import { Finger_Paint } from "next/font/google";
 import OurTeam from "@/components/our-team";
-import JavascriptIcon from "@mui/icons-material/Javascript";
-import Image from "next/image";
 import 'aos/dist/aos.css';
 import BackgroundPaths from "@/components/BackgroundPaths";
-import DynamicFrameLayout from "../components/DynamicFrameLayout"
 import AboutNew from "@/components/about-new";
 import WorkProcess from "@/components/WorkProcess";
 import ClientReviews from "@/components/ClientReviews";
-import { FooterNew } from "@/components/FooterNew";
 
 
-
-
-
-const finger = Finger_Paint({
-  weight: "400",
-  subsets: ["latin"],
-});
-const logoText = [
-  "T: -00:04",
-  "T: -00:03",
-  "T: -00:02",
-  "T: -00:01",
-  "T: -00:00",
-  "Lift Off!!",
-];
 
 function scrollToSection(elementRef: any) {
   elementRef.current.scrollIntoView({ behavior: "smooth" });

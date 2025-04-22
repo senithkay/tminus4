@@ -13,7 +13,7 @@ const fadeInUp = {
   }),
 }
 
-// Function to handle tilt animation
+// Custom Hook for Tilt Effect
 function useTilt() {
   const ref = useRef<HTMLDivElement>(null)
 
@@ -38,6 +38,39 @@ function useTilt() {
   }
 
   return { ref, handleMouseMove, handleMouseLeave }
+}
+
+// Card Component
+function WorkStepCard({ step, index }: { step: any; index: number }) {
+  const { ref, handleMouseMove, handleMouseLeave } = useTilt()
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 will-change-transform hover:scale-105  hover:shadow-[0_20px_40px_rgba(254,105,38,0.4)]"
+      custom={index}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeInUp}
+    >
+      <div className="bg-[#fe6926] px-0 py-0 flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
+        <Image
+          src={step.img}
+          alt={step.title}
+          width={400}
+          height={150}
+          className="object-cover"
+        />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold text-center mb-2">{step.title}</h3>
+        <p className="text-gray-600 text-center">{step.desc}</p>
+      </div>
+    </motion.div>
+  )
 }
 
 export default function WorkProcess() {
@@ -75,50 +108,19 @@ export default function WorkProcess() {
   ]
 
   return (
-    <div className="w-full py-8 md:py-14 bg-gradient-to-br from-black to-gray-800 px-6 md:px-10 lg:px-32 ">
-      <div className=" max-w-8xl mx-auto">
+    <div className="w-full py-8 md:py-14 bg-gradient-to-br from-black to-gray-800 px-6 md:px-10 lg:px-32">
+      <div className="max-w-8xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-5xl tracking-tight sm:text-6xl md:text-7xl font-extrabold  text-white">WORK PROCESS</h2>
+          <h2 className="text-5xl tracking-tight sm:text-6xl md:text-7xl font-extrabold text-white">WORK PROCESS</h2>
           <p className="max-w-[800px] mx-auto text-gray-300 text-lg lg:text-xl">
-            Great designs come from a great process. Here's the simple step-by-step method I use to create user-friendly
-            and excellent designs
+            {`" Great designs come from a great process. Here's the simple step-by-step method I use to create user-friendly and excellent designs"`}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {steps.map((step, index) => {
-            const { ref, handleMouseMove, handleMouseLeave } = useTilt()
-
-            return (
-                <motion.div
-                key={index}
-                ref={ref}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-                className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 will-change-transform hover:scale-105  hover:shadow-[0_20px_40px_rgba(254,105,38,0.4)]"
-                custom={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-              >
-              
-                <div className="bg-[#fe6926] px-0 py-0 flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
-                  <Image
-                    src={step.img}
-                    alt={step.title}
-                    width={400}
-                    height={150}
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-center mb-2">{step.title}</h3>
-                  <p className="text-gray-600 text-center">{step.desc}</p>
-                </div>
-              </motion.div>
-            )
-          })}
+          {steps.map((step, index) => (
+            <WorkStepCard key={index} step={step} index={index} />
+          ))}
         </div>
       </div>
     </div>

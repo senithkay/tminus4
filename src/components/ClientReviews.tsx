@@ -108,7 +108,7 @@ export default function ClientReviews() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Don't just take our word for it. Here's what clients have to say about working with us.
+           {`" Don't just take our word for it. Here's what clients have to say about working with us."`}
           </motion.p>
         </motion.div>
 

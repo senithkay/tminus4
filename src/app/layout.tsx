@@ -4,15 +4,9 @@ import "@fontsource/space-grotesk/300.css";
 import "@fontsource/space-grotesk/400.css";
 import "@fontsource/space-grotesk/500.css";
 import "@fontsource/space-grotesk/700.css";
-
-
 import { Analytics } from "@vercel/analytics/react"
-
-
-
 import "./globals.css";
 import React from "react";
-import Navbar from "@/components/navbar";
 import { FooterNew } from "@/components/FooterNew";
 
 const SpaceGrotesk = Space_Grotesk({

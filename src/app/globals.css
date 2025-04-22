@@ -57,10 +57,7 @@ html, body {
   background: linear-gradient(to bottom right, #2d2d2d, #1a1a1a); /* match your section */
 }
 
-/* globals.css or any global style file */
-body {
-  overflow: hidden;
-}
+
 
 
 
